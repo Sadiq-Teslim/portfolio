@@ -30,7 +30,7 @@ const HeroSection = () => {
               to="projects" 
               className="inline-block bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300 transform hover:scale-105"
             >
-              View My Work
+              View My Works
             </Link>
           </div>
         </div>

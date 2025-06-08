@@ -1,5 +1,5 @@
+// home.tsx or index.tsx
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 import HeroSection from "./hero";
 import Navbar from "./navbar";
 import FeaturedProjects from "./featuredp";

@@ -57,7 +57,7 @@ const Footer = () => {
         
         {/* Bottom section: Copyright and Social Icons */}
         <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-gray-100">
             © {new Date().getFullYear()} Sadiq Teslim Adetola. All Rights Reserved.
           </p>
           <div className="flex items-center gap-5">

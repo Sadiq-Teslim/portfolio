@@ -26,7 +26,7 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center space-x-8">
           <li>
             <Link 
-              to="#home" 
+              to="/index" 
               className="relative text-slate-200 hover:text-white font-medium transition-all duration-300 group"
             >
               Home
@@ -71,7 +71,7 @@ const Navbar = () => {
             <button 
               onClick={toggleMenu} 
               aria-label="Toggle Menu" 
-              className="text-slate-200 hover:text-white focus:outline-none transition-colors duration-300 p-2"
+              className="text-slate-200 hover:text-white focus:outline-none transition-colors hover:cursor-pointer duration-300 p-2"
             >
               <div className="w-6 h-6 relative">
                 <span className={`absolute block w-full h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'rotate-45 top-2.5' : 'top-1'}`}></span>
@@ -84,7 +84,7 @@ const Navbar = () => {
         <div className={`md:hidden absolute top-full left-0 right-0 bg-slate-900/98 backdrop-blur-xl border-b border-slate-700/30 transition-all duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
           <ul className="flex flex-col items-center space-y-6 py-8 px-8">
             <li>
-              <Link to="#home" onClick={handleLinkClick} className="text-slate-200 hover:text-white font-medium text-lg transition-colors duration-300">Home</Link>
+              <Link to="./home.tsx" onClick={handleLinkClick} className="text-slate-200 hover:text-white font-medium text-lg transition-colors duration-300">Home</Link>
             </li>
             <li>
               <Link to="#about" onClick={handleLinkClick} className="text-slate-200 hover:text-white font-medium text-lg transition-colors duration-300">About</Link>
