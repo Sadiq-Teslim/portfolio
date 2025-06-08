@@ -8,7 +8,7 @@ const NotFound = () => (
   <div className="text-center py-40">
     <h1 className="text-4xl font-bold text-white mb-4">Project Not Found</h1>
     <p className="text-slate-400 mb-8">
-      Sorry, I haven't wored on that project yet. Perhaps you could check my
+      Sorry, I haven't worked on that project yet. Perhaps you could check my
       other ones
     </p>
     <Link
