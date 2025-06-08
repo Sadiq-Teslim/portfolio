@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import myImage from '../../assets/my-image.jpg'; 
+import myImage from '../assets/my-image.jpg'; 
 
 const HeroSection = () => {
   return (

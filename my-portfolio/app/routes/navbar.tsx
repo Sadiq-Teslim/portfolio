@@ -26,7 +26,7 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center space-x-8">
           <li>
             <Link 
-              to="/index" 
+              to="/" 
               className="relative text-slate-200 hover:text-white font-medium transition-all duration-300 group"
             >
               Home
@@ -35,7 +35,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-              to="#about" 
+              to="/#about" 
               className="relative text-slate-200 hover:text-white font-medium transition-all duration-300 group"
             >
               About
@@ -44,7 +44,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-              to="projects" 
+              to="/projects" 
               className="relative text-slate-200 hover:text-white font-medium transition-all duration-300 group"
             >
               Projects
@@ -53,7 +53,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-              to="#contact" 
+              to="/#contact" 
               className="relative text-slate-200 hover:text-white font-medium transition-all duration-300 group"
             >
               Contact
@@ -84,16 +84,16 @@ const Navbar = () => {
         <div className={`md:hidden absolute top-full left-0 right-0 bg-slate-900/98 backdrop-blur-xl border-b border-slate-700/30 transition-all duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
           <ul className="flex flex-col items-center space-y-6 py-8 px-8">
             <li>
-              <Link to="./home.tsx" onClick={handleLinkClick} className="text-slate-200 hover:text-white font-medium text-lg transition-colors duration-300">Home</Link>
+              <Link to="/" onClick={handleLinkClick} className="text-slate-200 hover:text-white font-medium text-lg transition-colors duration-300">Home</Link>
             </li>
             <li>
-              <Link to="#about" onClick={handleLinkClick} className="text-slate-200 hover:text-white font-medium text-lg transition-colors duration-300">About</Link>
+              <Link to="/#about" onClick={handleLinkClick} className="text-slate-200 hover:text-white font-medium text-lg transition-colors duration-300">About</Link>
             </li>
             <li>
-              <Link to="projects" onClick={handleLinkClick} className="text-slate-200 hover:text-white font-medium text-lg transition-colors duration-300">Projects</Link>
+              <Link to="/projects" onClick={handleLinkClick} className="text-slate-200 hover:text-white font-medium text-lg transition-colors duration-300">Projects</Link>
             </li>
             <li>
-              <Link to="#contact" onClick={handleLinkClick} className="text-slate-200 hover:text-white font-medium text-lg transition-colors duration-300">Contact</Link>
+              <Link to="/#contact" onClick={handleLinkClick} className="text-slate-200 hover:text-white font-medium text-lg transition-colors duration-300">Contact</Link>
             </li>
             <li className="pt-4 w-full px-8">
               <Link to="https://wa.me/+2347063569494" target='_blank' rel='noopener noreferrer' onClick={handleLinkClick} className="block w-full text-center bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-violet-500/25 transition-all duration-300">
