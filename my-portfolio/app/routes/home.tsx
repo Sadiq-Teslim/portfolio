@@ -1,4 +1,3 @@
-// home.tsx or index.tsx
 import type { Route } from "./+types/home";
 import HeroSection from "./hero";
 import Navbar from "./navbar";

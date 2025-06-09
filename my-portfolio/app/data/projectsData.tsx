@@ -18,7 +18,7 @@ export const projectsData = [
       "Built as part of an edtech platform, this feature allows tutors to upload lesson videos, preview content, and assign them to individual students.",
       <>It uses React for the frontend, TypeScript for type safety, and TailwindCSS for responsive design. Axios handles communication with the Spring Boot backend built by{" "}
         <a 
-          href="https://github.com/fakorodehenry" 
+          href="https://github.com/henrytech12" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-blue-600 hover:text-blue-800 underline font-medium"
