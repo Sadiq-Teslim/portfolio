@@ -3,6 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import { projectsData } from "../data/projectsData";
 import Navbar from "./navbar";
 import Footer from "./footer";
+import verifactImage from '../assets/verifact-thumbnail.png';
+import agroscanImage from '../assets/agroscan-thumbnail.png';
+import deenwiseImage from '../assets/deenwise-thumbnail.png';
 
 const NotFound = () => (
   <div className="text-center py-40">

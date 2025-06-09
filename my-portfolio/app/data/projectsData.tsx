@@ -1,24 +1,40 @@
+import verifactImage from '../assets/verifact-thumbnail.png';
+import agroscanImage from '../assets/agroscan-thumbnail.png';
+import deenwiseImage from '../assets/deenwise-thumbnail.png';
+import techstarsImage from '../assets/techstars-thumbnail.png';
+import botImage from '../assets/bot_image.png';
+import trackerImage from '../assets/progresstracker.png';
+
 export const projectsData = [
   {
     id: "deenwise-video-management",
     title: "DeenWise Tutor Video Management",
     category: "Web App | Education",
-    imageUrl: "https://picsum.photos/seed/deenwise/800/600",
-    techStack: ["React", "TypeScript", "TailwindCSS", "Axios"],
+    imageUrl: deenwiseImage,
+    techStack: ["React", "TypeScript", "TailwindCSS", "Java", "Springboot"],
     description:
       "A video management platform for tutors to upload and assign lessons to students.",
     longDescription: [
       "Built as part of an edtech platform, this feature allows tutors to upload lesson videos, preview content, and assign them to individual students.",
-      "It uses React for the frontend, TypeScript for type safety, and TailwindCSS for responsive design. Axios handles communication with the Spring Boot backend.",
+      <>It uses React for the frontend, TypeScript for type safety, and TailwindCSS for responsive design. Axios handles communication with the Spring Boot backend built by{" "}
+        <a 
+          href="https://github.com/fakorodehenry" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:text-blue-800 underline font-medium"
+        >
+          Fakorode Henry
+        </a>
+        .</>,
     ],
-    liveUrl: "https://www.deenwise.com",
-    repoUrl: "https://github.com/Henrytech12/DeenWise",
+    liveUrl: "#",
+    repoUrl: "https://github.com/HenryTech12/DeenWise",
   },
   {
     id: "unihustle-whatsapp-bot",
     title: "UniHustle WhatsApp Bot",
     category: "AI | Automation",
-    imageUrl: "https://picsum.photos/seed/unihustle/800/600",
+    imageUrl: botImage,
     techStack: ["Twilio API", "Node.js", "Google Sheets API"],
     description:
       "A WhatsApp bot that helps students find vendors and register businesses.",
@@ -33,7 +49,7 @@ export const projectsData = [
     id: "rumor-verification-platform",
     title: "Verifact - Rumor Verification Platform",
     category: "Web App | AI",
-    imageUrl: "https://picsum.photos/seed/verifact/800/600",
+    imageUrl: verifactImage,
     techStack: [
       "React",
       "React Router",
@@ -47,6 +63,7 @@ export const projectsData = [
     longDescription: [
       "Verifact helps users verify images and texts by analyzing them with the Google Cloud Vision API, running fact-check searches with SERP API, and leveraging OpenAI to generate analysis reports.",
       "Built with React and Node.js, it's designed to empower media literacy and detect misinformation.",
+      "I focused on the frontend of the web application"
     ],
     liveUrl: "https://sadiq-teslim.github.io/verifact2",
     repoUrl: "https://github.com/Sadiq-Teslim/verifact2",
@@ -55,7 +72,7 @@ export const projectsData = [
     id: "course-progress-tracker",
     title: "Smart Course Progress Tracker",
     category: "Spreadsheet Tool | Utility",
-    imageUrl: "https://picsum.photos/seed/course-tracker/800/600",
+    imageUrl: trackerImage,
     techStack: ["Excel", "Conditional Formatting", "Dropdown Menus"],
     description:
       "An interactive Excel tracker for course milestones, with personalized badges and summaries.",
@@ -63,21 +80,19 @@ export const projectsData = [
       "Designed in WPS Office Excel, this tracker includes dropdowns for status updates, visual badges for milestones, and a dynamic dashboard summary.",
       "It allows learners to monitor course progress in stages, view completion stats, and add personal notes.",
     ],
-    liveUrl: "#",
+    liveUrl: "https://bit.ly/GetReadingTracker",
     repoUrl: "https://github.com/Sadiq-Teslim",
   },
   {
     id: "techstars-unilag-portal",
     title: "Techstars UNILAG Community Portal",
     category: "Web App | Community",
-    imageUrl: "https://picsum.photos/seed/techstars/800/600",
+    imageUrl: techstarsImage,
     techStack: [
       "React",
       "TypeScript",
-      "GraphQL",
       "Apollo",
       "Node.js",
-      "PostgreSQL",
     ],
     description:
       "A platform for Techstars UNILAG members to explore events, job listings, and connect with fellow students.",
@@ -92,7 +107,7 @@ export const projectsData = [
     id: "agroscan-ai-diagnostic",
     title: "AgroScan - AI Crop Disease Diagnostic",
     category: "AI | Agriculture",
-    imageUrl: "https://picsum.photos/seed/agroscan/800/600",
+    imageUrl: agroscanImage,
     techStack: [
       "React",
       "TensorFlow Lite",
@@ -108,7 +123,7 @@ export const projectsData = [
       "The frontend is a fast-loading React/Vite web app with a clean UI for 2G/3G users. When images can't be uploaded, users can send text-based reports via SMS through Twilio integration.",
       "Results and reports are logged into Google Sheets for easy tracking, and offline use cases are supported with local caching and fallback logic.",
     ],
-    liveUrl: "agroscan-xasy.onrender.com",
+    liveUrl: "https://www.agroscan-xasy.onrender.com",
     repoUrl: "https://github.com/Sadiq-Teslim/agroscan",
   },
 ];

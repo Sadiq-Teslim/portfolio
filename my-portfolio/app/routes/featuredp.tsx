@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; 
 import verifactImage from '../assets/verifact-thumbnail.png';
 import agroscanImage from '../assets/agroscan-thumbnail.png';
+import deenwiseImage from '../assets/deenwise-thumbnail.png';
 const FeaturedProjects = () => {
   const projects = [
     {
@@ -14,7 +15,7 @@ const FeaturedProjects = () => {
       id: "deenwise-video-management", 
       title: "DeenWise - Tutor & Student Platform",
       description: "An Islamic learning platform where tutors upload video lessons and manage assignments. Built using React and Spring Boot.",
-      image: "https://fakeimg.pl/600x400",
+      image: deenwiseImage,
     },
     {
       id: "techstars-unilag-portal", 
