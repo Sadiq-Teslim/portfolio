@@ -3,7 +3,7 @@ import agroscanImage from '../assets/agroscan-thumbnail.png';
 import deenwiseImage from '../assets/deenwise-thumbnail.png';
 import techstarsImage from '../assets/techstars-thumbnail.png';
 import botImage from '../assets/bot_image.png';
-import trackerImage from '../assets/progresstracker.png';
+import trackerImage from '../assets/progesstracker.png';
 
 export const projectsData = [
   {
