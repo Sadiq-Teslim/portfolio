@@ -1,31 +1,34 @@
+import React from 'react';
 import {
-  isRouteErrorResponse,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-  useRouteError, // CORRECTED: Import useRouteError for the ErrorBoundary
-} from "@remix-run/react"; // CORRECTED: Import from @remix-run/react
+  useRouteError, // This hook is used to get error details
+  isRouteErrorResponse,
+} from 'react-router-dom'; // CORRECT: Import from react-router-dom
 
-import type { LinksFunction } from "@remix-run/node"; 
-import "./app.css"; 
+import './app.css'; // Your global stylesheet
 
-// This looks like it was from another framework. In Remix, you'd typically use LinksFunction from @remix-run/node
-export const links: LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
-];
+// You can keep your links function for fonts
+export function links() {
+  return [
+    { rel: "preconnect", href: "https://fonts.googleapis.com" },
+    {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+      crossOrigin: "anonymous",
+    },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap",
+    },
+  ];
+}
 
-export function Layout({ children }: { children: React.ReactNode }) {
+// This is the main layout for your entire application
+export default function Root() {
   return (
     <html lang="en">
       <head>
@@ -35,9 +38,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <Outlet /> {/* This is where your routes (like home.tsx) will be rendered */}
+        
         <ScrollRestoration />
-        {process.env.NODE_ENV === "production" && (
+
+        {/* This is the correct way to add Google Analytics */}
+        {process.env.NODE_ENV === 'production' && (
           <>
             <script
               async
@@ -55,57 +61,36 @@ export function Layout({ children }: { children: React.ReactNode }) {
             />
           </>
         )}
+        
         <Scripts />
       </body>
     </html>
   );
 }
 
-export default function App() {
-  return <Outlet />;
-}
-
-// CORRECTED: The ErrorBoundary in Remix uses the `useRouteError` hook
+// This is the correct ErrorBoundary for your project setup
 export function ErrorBoundary() {
-  const error = useRouteError(); // Get the error using the hook
-
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
-  let stack: string | undefined;
-
-  if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
-    details =
-      error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
-  } else if (
-    process.env.NODE_ENV === "development" &&
-    error &&
-    error instanceof Error
-  ) {
-    details = error.message;
-    stack = error.stack;
-  }
+  const error = useRouteError();
+  console.error(error); // Log the error to the console for debugging
 
   return (
-    // It's good practice to render the full HTML document in the root error boundary
     <html lang="en">
       <head>
-        <title>{message}</title>
+        <title>Oops!</title>
         <Meta />
         <Links />
       </head>
       <body>
-        <main className="pt-16 p-4 container mx-auto">
-          <h1>{message}</h1>
-          <p>{details}</p>
-          {stack && (
-            <pre className="w-full p-4 overflow-x-auto bg-slate-800 text-white rounded-md">
-              <code>{stack}</code>
-            </pre>
+        <div>
+          <h1>An Error Occurred!</h1>
+          {isRouteErrorResponse(error) ? (
+            <p>
+              {error.status} {error.statusText}
+            </p>
+          ) : (
+            <p>{error instanceof Error ? error.message : 'Unknown Error'}</p>
           )}
-        </main>
+        </div>
         <Scripts />
       </body>
     </html>
