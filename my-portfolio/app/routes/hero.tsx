@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import myImage from '../assets/my-image.jpg'; 
 
 const HeroSection = () => {
+  const badgesReveal = useRevealAnimation<HTMLDivElement>({ delay: 80 });
+  const headingReveal = useRevealAnimation<HTMLHeadingElement>({ delay: 200 });
+  const paragraphReveal = useRevealAnimation<HTMLParagraphElement>({ delay: 320 });
+  const ctaReveal = useRevealAnimation<HTMLDivElement>({ delay: 420 });
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 py-10 md:py-16">
       <div 
@@ -19,7 +24,13 @@ const HeroSection = () => {
         {/* Content Container */}
         <div className="relative z-10 grid grid-cols-1 gap-6 text-left animate-fade-up-soft p-6 sm:flex sm:flex-col sm:gap-6 sm:p-12">
           <div className="flex flex-col gap-6 rounded-2xl bg-slate-900/70 p-6 backdrop-blur-md shadow-[0_25px_60px_rgba(15,23,42,0.45)] sm:max-w-3xl sm:bg-transparent sm:p-0 sm:backdrop-blur-none sm:shadow-none">
-            <div className="flex flex-wrap items-center gap-3">
+            <div
+              ref={badgesReveal.ref}
+              style={badgesReveal.style}
+              className={`flex flex-wrap items-center gap-3 transition-all duration-700 ${
+                badgesReveal.isVisible ? 'motion-safe:animate-reveal-right' : 'opacity-0 -translate-x-6'
+              } motion-reduce:opacity-100 motion-reduce:translate-x-0`}
+            >
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">
                 Open to Work
               </span>
@@ -27,15 +38,33 @@ const HeroSection = () => {
                 Avzdax Engineer · WebDerk Lead
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-violet-300 via-purple-300 to-indigo-400 bg-clip-text text-transparent">
+            <h1
+              ref={headingReveal.ref}
+              style={headingReveal.style}
+              className={`text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-violet-300 via-purple-300 to-indigo-400 bg-clip-text text-transparent transition-all duration-700 ${
+                headingReveal.isVisible ? 'motion-safe:animate-reveal-up' : 'opacity-0 translate-y-8'
+              } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
+            >
               Hey, I'm Teslim Adetola Sadiq
             </h1>
 
-            <p className="text-base text-slate-100 sm:text-lg sm:text-slate-300">
+            <p
+              ref={paragraphReveal.ref}
+              style={paragraphReveal.style}
+              className={`text-base text-slate-100 sm:text-lg sm:text-slate-300 transition-all duration-700 ${
+                paragraphReveal.isVisible ? 'motion-safe:animate-reveal-up' : 'opacity-0 translate-y-6'
+              } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
+            >
               I’m a Lagos-based product engineer who blends thoughtful UI work with pragmatic AI and payment stacks. If you need a teammate who can move from whiteboard to shipping builds like FairPlay Africa or the ULES voting platform, I’m ready to jump in.
             </p>
           </div>
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div
+            ref={ctaReveal.ref}
+            style={ctaReveal.style}
+            className={`flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between transition-all duration-700 ${
+              ctaReveal.isVisible ? 'motion-safe:animate-reveal-up' : 'opacity-0 translate-y-8'
+            } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
+          >
             <div className="flex flex-wrap gap-3 text-sm text-slate-200/90">
               <span className="rounded-full border border-slate-400/40 bg-slate-900/40 px-3 py-1 backdrop-blur-sm">
                 FairPlay Africa · ACM 2025 Winner

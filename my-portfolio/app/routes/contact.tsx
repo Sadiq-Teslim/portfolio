@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useRevealAnimation } from "../hooks/useRevealAnimation";
 
 const FORM_ENDPOINT = "https://formspree.io/f/xjkpngdk";
 
 const ContactSection = () => {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [feedback, setFeedback] = useState<{ title: string; message: string; tone: "success" | "error" } | null>(null);
+  const introReveal = useRevealAnimation<HTMLDivElement>({ delay: 60 });
+  const formReveal = useRevealAnimation<HTMLFormElement>({ delay: 200 });
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -58,7 +61,13 @@ const ContactSection = () => {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(139,92,246,0.25),_transparent_55%)]" aria-hidden />
       <div className="max-w-6xl mx-auto px-4 sm:px-8">
         <div className="grid gap-12 md:grid-cols-[1.05fr_0.95fr] items-start">
-          <div className="space-y-6">
+          <div
+            ref={introReveal.ref}
+            style={introReveal.style}
+            className={`space-y-6 transition-all duration-700 ${
+              introReveal.isVisible ? "motion-safe:animate-reveal-up" : "opacity-0 translate-y-8"
+            } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
+          >
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-violet-300/80">Let's collaborate</p>
             <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-white">
               Ready to ship your next AI or payments experience?
@@ -96,9 +105,13 @@ const ContactSection = () => {
           </div>
 
           <form
+            ref={formReveal.ref}
+            style={formReveal.style}
             onSubmit={handleSubmit}
             noValidate
-            className="relative rounded-3xl border border-slate-700/40 bg-slate-900/70 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.35)] backdrop-blur-xl"
+            className={`relative rounded-3xl border border-slate-700/40 bg-slate-900/70 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.35)] backdrop-blur-xl transition-all duration-700 ${
+              formReveal.isVisible ? "motion-safe:animate-reveal-up" : "opacity-0 translate-y-8"
+            } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
           >
             <div className="absolute -top-8 right-8 hidden sm:flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-purple-500 text-white shadow-lg shadow-violet-500/40">
               ✉️
@@ -145,7 +158,8 @@ const ContactSection = () => {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-violet-500/30 transition hover:shadow-violet-500/45 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-violet-400 disabled:cursor-not-allowed disabled:opacity-80"
+                className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-violet-500/30 transition hover:shadow-violet-500/45 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-violet-400 disabled:cursor-not-allowed disabled:opacity-80 motion-safe:animate-border-glow"
+                style={{ animationDelay: "120ms" }}
               >
                 {status === "submitting" ? "Sending..." : "Send Message"}
               </button>

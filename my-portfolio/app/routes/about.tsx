@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRevealAnimation } from '../hooks/useRevealAnimation';
 
 const AboutSection = () => {
   const socialLinks = [
@@ -31,6 +32,10 @@ const AboutSection = () => {
     }
   ];
 
+  const aboutReveal = useRevealAnimation<HTMLDivElement>({ delay: 80 });
+  const contactReveal = useRevealAnimation<HTMLDivElement>({ delay: 200 });
+  const socialsReveal = useRevealAnimation<HTMLDivElement>({ delay: 320 });
+
   return (
     <div className="bg-slate-900 text-slate-50">
       {/* Container with consistent padding and max-width */}
@@ -39,7 +44,14 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 md:gap-x-16 lg:gap-x-24 gap-y-16">
           
           {/* About Me Section */}
-          <section id='about'>
+          <section
+            id='about'
+            ref={aboutReveal.ref}
+            style={aboutReveal.style}
+            className={`transition-all duration-700 ${
+              aboutReveal.isVisible ? 'motion-safe:animate-reveal-up' : 'opacity-0 translate-y-8'
+            } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
+          >
             <h2 className="text-3xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
               About Me
             </h2>
@@ -51,7 +63,14 @@ const AboutSection = () => {
           </section>
 
           {/* Contact Section */}
-          <section id='contact'>
+          <section
+            id='contact'
+            ref={contactReveal.ref}
+            style={contactReveal.style}
+            className={`transition-all duration-700 ${
+              contactReveal.isVisible ? 'motion-safe:animate-reveal-up' : 'opacity-0 translate-y-8'
+            } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
+          >
             <h2 className="text-3xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
               Get In Touch
             </h2>
@@ -60,14 +79,21 @@ const AboutSection = () => {
             </p>
 
             {/* Revamped Social Links */}
-            <div className="flex items-center gap-4">
-              {socialLinks.map((social) => (
+            <div
+              ref={socialsReveal.ref}
+              style={socialsReveal.style}
+              className={`flex items-center gap-4 transition-all duration-700 ${
+                socialsReveal.isVisible ? 'motion-safe:animate-reveal-up' : 'opacity-0 translate-y-8'
+              } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
+            >
+              {socialLinks.map((social, index) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex items-center justify-center w-14 h-14 bg-slate-800 rounded-full border-2 border-slate-700 transition-all duration-300 ease-in-out hover:scale-110 hover:border-violet-400 hover:bg-gradient-to-br from-violet-500 to-purple-600"
+                  className="group relative flex items-center justify-center w-14 h-14 bg-slate-800 rounded-full border-2 border-slate-700 transition-all duration-300 ease-in-out hover:scale-110 hover:border-violet-400 hover:bg-gradient-to-br from-violet-500 to-purple-600 motion-safe:animate-reveal-scale"
+                  style={{ animationDelay: `${index * 90}ms` }}
                 >
                   <div className="text-slate-300 transition-colors group-hover:text-white">
                     {social.icon}
