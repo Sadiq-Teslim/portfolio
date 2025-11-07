@@ -1,37 +1,65 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import myImage from '../assets/my-image.jpg'; 
 
 const HeroSection = () => {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 py-10 md:py-16">
       <div 
-        className="relative min-h-[520px] rounded-2xl flex flex-col justify-end p-8 md:p-12 shadow-2xl shadow-slate-900/40 border border-slate-700/30 overflow-hidden"
+        className="relative grid min-h-[560px] grid-rows-[minmax(0,1fr)] overflow-hidden rounded-2xl border border-slate-700/30 shadow-2xl shadow-slate-900/40 sm:flex sm:flex-col sm:justify-end"
       >
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${myImage})` }}
         />
         <div 
-          className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/40 to-transparent sm:from-slate-900/90 sm:via-slate-900/55"
         />
 
         {/* Content Container */}
-        <div className="relative z-10 flex flex-col gap-5 text-left">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-violet-300 via-purple-300 to-indigo-400 bg-clip-text text-transparent">
-            Hi, I'm Sadiq Teslim Adetola
-          </h1>
-          
-          <p className="max-w-2xl text-lg text-slate-300">
-            I build sleek, high-performance web experiences that blend creativity with code — responsive, accessible, and user-first.
-          </p>
-          <div className="mt-4">
-            <Link 
-              to="projects" 
-              className="inline-block bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300 transform hover:scale-105"
-            >
-              View My Works
-            </Link>
+        <div className="relative z-10 grid grid-cols-1 gap-6 text-left animate-fade-up-soft p-6 sm:flex sm:flex-col sm:gap-6 sm:p-12">
+          <div className="flex flex-col gap-6 rounded-2xl bg-slate-900/70 p-6 backdrop-blur-md shadow-[0_25px_60px_rgba(15,23,42,0.45)] sm:max-w-3xl sm:bg-transparent sm:p-0 sm:backdrop-blur-none sm:shadow-none">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">
+                Open to Work
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/40 bg-violet-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-violet-200/90">
+                Avzdax Engineer · WebDerk Lead
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-violet-300 via-purple-300 to-indigo-400 bg-clip-text text-transparent">
+              Hey, I'm Teslim Adetola Sadiq
+            </h1>
+
+            <p className="text-base text-slate-100 sm:text-lg sm:text-slate-300">
+              I’m a Lagos-based product engineer who blends thoughtful UI work with pragmatic AI and payment stacks. If you need a teammate who can move from whiteboard to shipping builds like FairPlay Africa or the ULES voting platform, I’m ready to jump in.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-wrap gap-3 text-sm text-slate-200/90">
+              <span className="rounded-full border border-slate-400/40 bg-slate-900/40 px-3 py-1 backdrop-blur-sm">
+                FairPlay Africa · ACM 2025 Winner
+              </span>
+              <span className="rounded-full border border-slate-400/40 bg-slate-900/40 px-3 py-1 backdrop-blur-sm">
+                20K+ secure civic ballots cast
+              </span>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link 
+                to="projects" 
+                className="inline-flex items-center justify-center bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300 transform hover:scale-105"
+              >
+                Explore Recent Builds
+              </Link>
+              <a
+                href="https://bit.ly/STAResume"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-violet-400/60 bg-slate-900/40 px-8 py-3 text-sm font-semibold text-violet-200 transition-all duration-300 hover:border-violet-300 hover:bg-violet-500/10 hover:text-violet-100 backdrop-blur"
+              >
+                Download Résumé
+              </a>
+            </div>
           </div>
         </div>
       </div>

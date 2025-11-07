@@ -14,6 +14,7 @@ import './app.css'; // Your global stylesheet
 // You can keep your links function for fonts
 export function links() {
   return [
+    { rel: "canonical", href: "https://teslimcodes.tech" },
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
     {
       rel: "preconnect",

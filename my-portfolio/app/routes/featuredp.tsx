@@ -1,29 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import kulaImage from "../assets/kula-thumbnail.png";
+import fairplayImage from "../assets/fairplay-thumbnail.svg";
 import ulesVotingImage from "../assets/ules-voting-thumbnail.png";
 import gpaiImage from "../assets/gpai-thumbnail.png";
 const FeaturedProjects = () => {
   const projects = [
     {
-      id: "kula-ai-companion",
-      title: "Kula - AI Companion for New Mothers",
+      id: "fairplay-africa",
+      title: "FairPlay Africa",
       description:
-        "A multi-modal AI-powered web app offering maternal health support through chat, image analysis, and early warnings.",
-      image: kulaImage,
+        "Hackathon-winning piracy watchtower protecting Nollywood titles with sub-300ms detection sweeps.",
+      image: fairplayImage,
     },
     {
       id: "ules-voting-platform",
       title: "ULES Awards Voting Platform",
       description:
-        "A secure full-stack voting platform for the University of Lagos Engineering Society Awards with live dashboards and admin controls.",
+        "Secure e-voting stack verifying 3,500+ students and streaming 20K+ ballots live.",
       image: ulesVotingImage,
     },
     {
       id: "gpai-assistant",
       title: "GPAi - AI GPA Assistant",
       description:
-      "An AI-powered GPA calculator that provides personalized academic insights and motivational feedback.",
+        "AI GPA mentor helping 2k+ undergraduates simulate grades and auto-build study plans.",
       image: gpaiImage,
     },
   ];
@@ -37,8 +37,7 @@ const FeaturedProjects = () => {
             Featured Projects
           </h2>
           <p className="max-w-2xl mx-auto mt-4 text-lg text-slate-300">
-            Here are a few selected projects that showcase my passion for
-            building impactful solutions.
+            Flagship builds spanning AI surveillance, civic engagement, and student success—each shipped with measurable results.
           </p>
         </div>
 

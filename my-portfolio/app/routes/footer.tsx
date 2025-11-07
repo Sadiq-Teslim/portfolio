@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router'; 
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const socialLinks = [
-    { name: "Github", url: "https://github.com/Sadiq-Teslim", icon: <svg>...</svg> },
-    { name: "LinkedIn", url: "https://linkedin.com/in/sadiq-ta", icon: <svg>...</svg> },
-    { name: "X (Twitter)", url: "https://x.com/teslimadetola08", icon: <svg>...</svg> }
+    { name: 'Github', url: 'https://github.com/Sadiq-Teslim' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/sadiq-ta' },
+    { name: 'X (Twitter)', url: 'https://x.com/teslimadetola08' }
   ];
 
   // Helper for social icon SVGs for brevity
@@ -29,41 +29,118 @@ const Footer = () => {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-slate-400 transition-colors duration-300 hover:text-violet-400"
+        className="group relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-violet-500/40 bg-slate-900/60 text-violet-200 shadow-lg shadow-violet-500/20 transition-all duration-300 hover:border-violet-300 hover:bg-violet-500/10 hover:text-violet-100"
       >
+        <span className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <span className="absolute inset-0 animate-gradient-x bg-[linear-gradient(120deg,rgba(139,92,246,0.4),rgba(59,130,246,0.2),rgba(6,182,212,0.35))] bg-[length:200%_200%]" />
+        </span>
+        <span className="absolute inset-0 scale-150 animate-sparkle rounded-full bg-violet-500/20 blur-2xl" aria-hidden />
         <span className="sr-only">{name}</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">{iconPath}</svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          className="relative z-10"
+        >
+          {iconPath}
+        </svg>
       </a>
     );
   };
-  
+
   return (
-    <footer className="bg-slate-950/70 backdrop-blur-xl border-t border-slate-700/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12">
-        {/* Top section: Logo and Nav Links */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-xl font-bold bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-            Sadiq Teslim Adetola
+    <footer className="relative overflow-hidden border-t border-slate-800/60 bg-slate-950/85 py-16">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-32 left-[12%] h-72 w-72 rounded-full bg-gradient-to-br from-violet-500/35 via-purple-500/30 to-cyan-400/35 blur-3xl animate-aurora" />
+        <div className="absolute -bottom-20 right-[15%] h-80 w-80 rounded-full bg-gradient-to-tr from-cyan-500/30 via-blue-500/20 to-purple-500/30 blur-3xl animate-float-bubble" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-70 animate-gradient-x" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent opacity-40 animate-gradient-x" />
+      </div>
+
+      <div className="relative mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-8">
+        <div className="grid gap-8 rounded-3xl border border-slate-800/60 bg-slate-900/70 p-8 shadow-[0_35px_120px_rgba(15,23,42,0.55)] backdrop-blur-xl md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+          <div className="relative overflow-hidden rounded-2xl border border-violet-500/25 bg-slate-950/60 px-6 py-6 shadow-lg shadow-violet-500/25">
+            <div className="absolute -right-16 top-1/2 h-36 w-36 -translate-y-1/2 rounded-full bg-gradient-to-br from-violet-500/30 via-fuchsia-500/20 to-cyan-400/25 blur-2xl animate-float-bubble" />
+            <span className="text-xs font-semibold uppercase tracking-[0.4em] text-violet-200/80">Teslim Codes</span>
+            <p className="mt-3 text-3xl font-extrabold text-white">Teslim Adetola Sadiq</p>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-300">
+              Crafting joyful, resilient AI experiences for teams that want speed without sacrificing reliability. Drop by, browse the builds, and let&apos;s ship something unforgettable.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300/80">
+              <span className="rounded-full border border-violet-500/30 bg-slate-900/60 px-4 py-2">AI-first delivery</span>
+              <span className="rounded-full border border-cyan-400/30 bg-slate-900/60 px-4 py-2">Payments-ready</span>
+              <span className="rounded-full border border-purple-400/30 bg-slate-900/60 px-4 py-2">Community-built</span>
+            </div>
+            <span className="absolute left-6 top-6 h-1 w-12 rounded-full bg-gradient-to-r from-violet-400 to-cyan-300 opacity-70" />
           </div>
-          <ul className="flex items-center flex-wrap justify-center gap-x-6 gap-y-2 md:gap-x-8">
-            <li><Link to="#about" className="text-slate-300 hover:text-white font-medium transition-colors duration-300">About</Link></li>
-            <li><Link to="projects" className="text-slate-300 hover:text-white font-medium transition-colors duration-300">Projects</Link></li>
-            <li><Link to="#contact" className="text-slate-300 hover:text-white font-medium transition-colors duration-300">Contact</Link></li>
-          </ul>
+
+          <div className="flex flex-col justify-between gap-6">
+            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 md:justify-end">
+              <li>
+                <Link
+                  to="/#about"
+                  className="group inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-950/60 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-violet-400/60 hover:bg-violet-500/10 hover:text-white"
+                >
+                  <span className="h-1 w-1 rounded-full bg-violet-400 transition-transform duration-300 group-hover:scale-125" />
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/projects"
+                  className="group inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-950/60 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-violet-400/60 hover:bg-violet-500/10 hover:text-white"
+                >
+                  <span className="h-1 w-1 rounded-full bg-violet-400 transition-transform duration-300 group-hover:scale-125" />
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/#contact"
+                  className="group inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-950/60 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-violet-400/60 hover:bg-violet-500/10 hover:text-white"
+                >
+                  <span className="h-1 w-1 rounded-full bg-violet-400 transition-transform duration-300 group-hover:scale-125" />
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://bit.ly/STAResume"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-violet-500/60 bg-gradient-to-r from-violet-500/20 via-purple-500/10 to-cyan-400/20 px-5 py-2.5 text-sm font-semibold text-violet-100 transition-all duration-300 hover:from-violet-500/30 hover:to-cyan-400/25"
+                >
+                  Résumé
+                  <span className="text-xs">↗</span>
+                </a>
+              </li>
+            </ul>
+
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-end">
+              <div className="flex items-center gap-5">
+                {socialLinks.map((social) => (
+                  <SocialIcon key={social.name} name={social.name} url={social.url} />
+                ))}
+              </div>
+              <div className="flex items-center gap-3 rounded-full border border-violet-500/30 bg-slate-950/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-violet-200/90">
+                <span className="relative block h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
+                Always shipping
+              </div>
+            </div>
+          </div>
         </div>
-        
-        {/* Divider */}
-        <hr className="my-8 border-slate-700" />
-        
-        {/* Bottom section: Copyright and Social Icons */}
-        <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-gray-100">
-            © {new Date().getFullYear()} Sadiq Teslim Adetola. All Rights Reserved.
+
+        <div className="flex flex-col items-center justify-between gap-6 text-center text-sm text-slate-300/80 sm:flex-row">
+          <p>
+            © {new Date().getFullYear()} Teslim Adetola Sadiq. All rights reserved. Built with intent, caffeine, and endless curiosity.
           </p>
-          <div className="flex items-center gap-5">
-            {socialLinks.map(social => (
-              <SocialIcon key={social.name} name={social.name} url={social.url} />
-            ))}
+          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-slate-500">
+            <span className="rounded-full border border-slate-700 px-3 py-1">FairPlay</span>
+            <span className="rounded-full border border-slate-700 px-3 py-1">ULES</span>
+            <span className="rounded-full border border-slate-700 px-3 py-1">GPAi</span>
+            <span className="rounded-full border border-slate-700 px-3 py-1">Kula</span>
           </div>
         </div>
       </div>

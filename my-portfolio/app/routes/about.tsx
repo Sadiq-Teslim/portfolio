@@ -44,10 +44,9 @@ const AboutSection = () => {
               About Me
             </h2>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Hey, I'm Teslim — a Mechanical Engineering student at the University of Lagos, frontend developer, and AI enthusiast.
-              I'm passionate about building solutions that bridge the digital divide, especially in education. I've worked on AI-powered apps,
-              developed interfaces for learning platforms, and led tech communities to help more students break into tech. Whether it's crafting
-              clean UIs with React or making AI work offline for real people, I'm all about tech that makes an impact.
+              Hey, I'm Teslim — a fullstack product engineer and AI specialist studying Mechanical Engineering at the University of Lagos.
+              I architect resilient platforms that blend expressive frontends with dependable service layers, from piracy surveillance for Nollywood to predictive security at Avzdax and low-bandwidth health copilots.
+              Beyond shipping code, I lead engineering pods, mentor builders in my community, and obsess over measurable outcomes that make technology genuinely useful.
             </p>
           </section>
 

@@ -3,9 +3,63 @@ import { useParams, Link } from "react-router-dom";
 import { projectsData } from "../data/projectsData";
 import Navbar from "./navbar";
 import Footer from "./footer";
-import verifactImage from '../assets/verifact-thumbnail.png';
-import agroscanImage from '../assets/agroscan-thumbnail.png';
-import deenwiseImage from '../assets/deenwise-thumbnail.png';
+
+export const meta = ({ params }: { params: { id?: string } }) => {
+  const ogImage = "https://teslimcodes.tech/og-image.svg";
+  const twitterHandle = "@teslimadetola08";
+  const project = projectsData.find((item) => item.id === params.id);
+
+  if (!project) {
+    return [
+      { title: "Project Not Found | Teslim Sadiq" },
+      {
+        name: "description",
+        content: "This project does not exist in Teslim Sadiq’s portfolio.",
+      },
+      { property: "og:title", content: "Project Not Found | Teslim Sadiq" },
+      {
+        property: "og:description",
+        content: "This project does not exist in Teslim Sadiq’s portfolio.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://teslimcodes.tech/projects" },
+      { property: "og:site_name", content: "Teslim Codes" },
+      { property: "og:image", content: ogImage },
+      { property: "og:image:type", content: "image/svg+xml" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Project Not Found | Teslim Sadiq" },
+      {
+        name: "twitter:description",
+        content: "This project does not exist in Teslim Sadiq’s portfolio.",
+      },
+      { name: "twitter:site", content: twitterHandle },
+      { name: "twitter:image", content: ogImage },
+    ];
+  }
+
+  const pageUrl = `https://teslimcodes.tech/projects/${project.id}`;
+
+  return [
+    { title: `${project.title} | Teslim Sadiq` },
+    { name: "description", content: project.description },
+    { property: "og:title", content: `${project.title} | Teslim Sadiq` },
+    { property: "og:description", content: project.description },
+    { property: "og:type", content: "article" },
+    { property: "og:url", content: pageUrl },
+    { property: "og:site_name", content: "Teslim Codes" },
+    { property: "og:image", content: ogImage },
+    { property: "og:image:type", content: "image/svg+xml" },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: `${project.title} | Teslim Sadiq` },
+    { name: "twitter:description", content: project.description },
+    { name: "twitter:site", content: twitterHandle },
+    { name: "twitter:image", content: ogImage },
+  ];
+};
 
 const NotFound = () => (
   <div className="text-center py-40">
@@ -45,11 +99,11 @@ const ProjectDetailPage = () => {
         <div className="mb-12">
           <Link
             to="/projects"
-            className="text-violet-400 hover:text-violet-300 transition-colors duration-300 group flex items-center gap-2"
+            className="inline-flex items-center gap-2 rounded-full border border-violet-400/50 bg-slate-900/60 px-5 py-2.5 text-sm font-semibold text-violet-200 transition-all duration-300 hover:border-violet-300 hover:bg-violet-500/15 hover:text-violet-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-1"
+              className="h-4 w-4"
               viewBox="0 0 20 20"
               fill="currentColor"
             >

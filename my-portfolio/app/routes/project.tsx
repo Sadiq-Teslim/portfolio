@@ -4,6 +4,35 @@ import { projectsData } from '../data/projectsData';
 import Navbar from './navbar';
 import Footer from './footer';
 
+export const meta = () => [
+  { title: 'Projects | Teslim Sadiq' },
+  {
+    name: 'description',
+    content:
+      'Explore Teslim Sadiq’s flagship projects across AI, fintech, civic tech, and health—from FairPlay Africa to GPAi and EchoWatch.',
+  },
+  { property: 'og:title', content: 'Projects | Teslim Sadiq' },
+  {
+    property: 'og:description',
+    content: 'Award-winning AI and fullstack builds including FairPlay Africa, ULES Voting, GPAi, Kula, and more.',
+  },
+  { property: 'og:type', content: 'website' },
+  { property: 'og:url', content: 'https://teslimcodes.tech/projects' },
+  { property: 'og:site_name', content: 'Teslim Codes' },
+  { property: 'og:image', content: 'https://teslimcodes.tech/og-image.svg' },
+  { property: 'og:image:type', content: 'image/svg+xml' },
+  { property: 'og:image:width', content: '1200' },
+  { property: 'og:image:height', content: '630' },
+  { name: 'twitter:card', content: 'summary_large_image' },
+  { name: 'twitter:title', content: 'Projects | Teslim Sadiq' },
+  {
+    name: 'twitter:description',
+    content: 'Award-winning AI and fullstack builds including FairPlay Africa, ULES Voting, GPAi, Kula, and more.',
+  },
+  { name: 'twitter:site', content: '@teslimadetola08' },
+  { name: 'twitter:image', content: 'https://teslimcodes.tech/og-image.svg' },
+];
+
 type Project = {
   id: string;
   title: string;
@@ -46,7 +75,7 @@ const ProjectsPage = () => {
             My Works
           </h1>
           <p className="max-w-2xl mx-auto mt-4 text-lg text-slate-300">
-            A collection of my  projects. Each one is a story of learning, challenge, and creation.
+            Each build pairs thoughtful interfaces with resilient backends—from hackathon-winning AI surveillance to student civic tech and health PWAs.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">

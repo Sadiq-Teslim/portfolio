@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', './app/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -11,6 +11,43 @@ module.exports = {
         muted: '#94A3B8', // Muted gray text
         danger: '#EF4444', // For error states
         highlight: '#38BDF8' // Cyan-ish for hover/CTA
+      },
+      keyframes: {
+        'fade-up-soft': {
+          '0%': { opacity: 0, transform: 'translateY(24px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' }
+        },
+        'float-glow': {
+          '0%, 100%': { transform: 'translateY(0px)', filter: 'drop-shadow(0 0 0 rgba(56, 189, 248, 0.25))' },
+          '50%': { transform: 'translateY(-6px)', filter: 'drop-shadow(0 18px 42px rgba(56, 189, 248, 0.35))' }
+        },
+        'gradient-x': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' }
+        },
+        aurora: {
+          '0%': { transform: 'translate3d(-12%, 0%, 0) scale(1)' },
+          '50%': { transform: 'translate3d(12%, -10%, 0) scale(1.1)' },
+          '100%': { transform: 'translate3d(-12%, 0%, 0) scale(1)' }
+        },
+        'float-bubble': {
+          '0%': { transform: 'translateY(0) scale(1)' },
+          '50%': { transform: 'translateY(-22px) scale(1.05)' },
+          '100%': { transform: 'translateY(0) scale(1)' }
+        },
+        sparkle: {
+          '0%, 100%': { opacity: 0.6, transform: 'scale(0.94)' },
+          '50%': { opacity: 1, transform: 'scale(1)' }
+        }
+      },
+      animation: {
+        'fade-up-soft': 'fade-up-soft 0.9s ease-out both',
+        'float-glow': 'float-glow 5s ease-in-out infinite',
+        'gradient-x': 'gradient-x 8s ease-in-out infinite',
+        aurora: 'aurora 12s ease-in-out infinite',
+        'float-bubble': 'float-bubble 10s ease-in-out infinite',
+        sparkle: 'sparkle 3s ease-in-out infinite'
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
