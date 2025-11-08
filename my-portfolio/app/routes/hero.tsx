@@ -55,7 +55,7 @@ const HeroSection = () => {
                 paragraphReveal.isVisible ? 'motion-safe:animate-reveal-up' : 'opacity-0 translate-y-6'
               } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
             >
-              I’m a Lagos-based product engineer who blends thoughtful UI work with pragmatic AI and payment stacks. If you need a teammate who can move from whiteboard to shipping builds like FairPlay Africa or the ULES voting platform, I’m ready to jump in.
+              I’m a Lagos-based Fullstack Developer & AI Engineer who blends thoughtful UI work with pragmatic AI and payment stacks. If you need a teammate who can move from whiteboard to shipping builds like FairPlay Africa or the ULES voting platform, I’m ready to jump in.
             </p>
           </div>
           <div

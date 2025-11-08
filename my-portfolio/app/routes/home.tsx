@@ -11,7 +11,7 @@ import ContactSection from "./contact";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Teslim Sadiq | Fullstack Developer & AI Product Engineer" },
+    { title: "Teslim Sadiq | Fullstack Developer & AI Engineer" },
     {
       name: "description",
       content:
@@ -23,7 +23,7 @@ export function meta({}: Route.MetaArgs) {
         "Teslim Sadiq, Teslim Adetola Sadiq, Teslim Codes, AI engineer Nigeria, fullstack developer Lagos, FairPlay Africa, ULES voting platform, GPAi, Kula companion",
     },
     { name: "robots", content: "index, follow" },
-    { property: "og:title", content: "Teslim Sadiq | AI Product Engineer & Fullstack Developer" },
+  { property: "og:title", content: "Teslim Sadiq | Fullstack Developer & AI Engineer" },
     {
       property: "og:description",
       content:
@@ -37,7 +37,7 @@ export function meta({}: Route.MetaArgs) {
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
     { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: "Teslim Sadiq | AI Product Engineer" },
+  { name: "twitter:title", content: "Teslim Sadiq | Fullstack Developer & AI Engineer" },
     {
       name: "twitter:description",
       content:
