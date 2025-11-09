@@ -57,7 +57,7 @@ const AboutSection = () => {
             </h2>
             <p className="text-slate-300 text-lg leading-relaxed">
               Hey, I'm Teslim — a Fullstack Developer & AI Engineer studying Mechanical Engineering at the University of Lagos.
-              I architect resilient platforms that blend expressive frontends with dependable service layers, from piracy surveillance for Nollywood to predictive security at Avzdax and low-bandwidth health copilots.
+              I architect resilient platforms that blend expressive frontends with dependable service layers, and integrate them successfully with backend servers that are built with industry-level optimizations and delivery speed.
               Beyond shipping code, I lead engineering pods, mentor builders in my community, and obsess over measurable outcomes that make technology genuinely useful.
             </p>
           </section>

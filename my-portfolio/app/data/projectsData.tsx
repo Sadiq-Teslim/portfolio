@@ -6,11 +6,24 @@ import echowatchImage from "../assets/echowatch-thumbnail.png";
 import ulesTicketingImage from "../assets/ules-ticketing-thumbnail.png";
 import gpaiImage from "../assets/gpai-thumbnail.png";
 
-export const projectsData = [
+export type ProjectData = {
+  id: string;
+  title: string;
+  category: string;
+  imageUrl: string;
+  techStack: string[];
+  description: string;
+  longDescription: string[];
+  liveUrl: string;
+  repoUrl: string;
+  backendRepoUrl?: string;
+};
+
+export const projectsData: ProjectData[] = [
   {
     id: "fairplay-africa",
     title: "FairPlay Africa",
-    category: "AI | Media Security",
+    category: "AI | Entertainment Security",
     imageUrl: fairplayImage,
     techStack: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Gemini AI"],
     description:
@@ -40,12 +53,13 @@ export const projectsData = [
     description:
       "Secure e-voting stack verifying 3,500+ students and streaming 20K+ ballots in real time with Paystack-backed validation.",
     longDescription: [
-      "ULES brought integrity back to student elections by enforcing one-person-one-vote with Paystack receipt checks and verified matric records.",
+      "I solved the issues of voting fraud and result delays by building a secure, real-time e-voting platform for the ULES Awards. The platform successfully collected 30,000 votes from 3500+ verified students.",
       "A React + TypeScript SPA feeds an Express + MongoDB backend that streams live dashboards and exports auditor-ready PDFs.",
       "20K+ ballots sync in real time so stakeholders maintain transparency without sacrificing speed or uptime.",
     ],
     liveUrl: "https://ules-vote.netlify.app",
     repoUrl: "https://github.com/Sadiq-Teslim/ules-voting",
+    backendRepoUrl: "https://github.com/Sadiq-Teslim/ules-voting-backend",
   },
   {
     id: "gpai-assistant",
@@ -60,7 +74,7 @@ export const projectsData = [
       "OpenAI API",
     ],
     description:
-      "AI GPA mentor helping 2k+ undergraduates simulate grades and auto-build study plans.",
+      "AI GPA mentor that has helped 2k+ undergraduates simulate grades and auto-build study plans.",
     longDescription: [
       "GPAi supports students who previously stitched spreadsheets and guesswork to plan their semesters.",
       "The React interface calls Netlify Functions that orchestrate OpenAI prompts to forecast GPA trajectories and surface risky courses.",

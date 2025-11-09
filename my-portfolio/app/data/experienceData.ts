@@ -19,20 +19,20 @@ export const experienceData: ExperienceItem[] = [
   {
     id: "avzdax-obex-edge",
     company: "Avzdax Technologies",
-    role: "Fullstack Engineer",
+    role: "Fullstack Engineer Intern",
     period: "2025 – Present",
     location: "Lekki, Lagos",
     description:
-      "Co-building Obex Edge, a predictive security platform that senses vehicle threats before they escalate.",
+      "Contributing to a confidential mobility security initiative at Avzdax Technologies.",
     achievements: [
-      "Own telemetry ingestion pipelines and React command interfaces so operators receive pre-emptive alerts across shifts.",
-      "Ship both Node microservices and dashboard UX to visualise risk timelines and remediation playbooks for two stakeholder groups.",
-      "Benchmark model performance with the product and research pods, tightening false positives through weekly iterations.",
+      "Partner with cross-functional squads to deliver secure API and dashboard increments under NDA constraints.",
+      "Ship fullstack updates that align with internal safety reviews and stakeholder rollout plans.",
+      "Collaborate with product and research pods to prioritise improvements while protecting sensitive details.",
     ],
     stack: ["React", "TypeScript", "Node.js", "MongoDB", "Python", "TensorFlow"],
     metrics: [
-      { label: "Focus", value: "Predictive vehicle security" },
-      { label: "Surfaces", value: "APIs + Command UI" },
+      { label: "Focus", value: "Confidential security R&D" },
+      { label: "Delivery", value: "Fullstack increments" },
       { label: "Tenure", value: "2025–Present" },
     ],
   },

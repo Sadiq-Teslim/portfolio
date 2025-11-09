@@ -211,6 +211,17 @@ const ProjectDetailPage = () => {
                 >
                   View Code
                 </a>
+                {project.backendRepoUrl && (
+                  <a
+                    href={project.backendRepoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-center w-full bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 motion-safe:animate-reveal-scale"
+                    style={{ animationDelay: "320ms" }}
+                  >
+                    Backend Repo
+                  </a>
+                )}
               </div>
             </div>
           </div>
