@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import resumeFile from '../assets/Teslim Adetola Sadiq.docx.pdf';
 
 const Footer = () => {
   const socialLinks = [
@@ -107,7 +108,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://bit.ly/STAResume"
+                  href={resumeFile}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-violet-500/60 bg-gradient-to-r from-violet-500/20 via-purple-500/10 to-cyan-400/20 px-5 py-2.5 text-sm font-semibold text-violet-100 transition-all duration-300 hover:from-violet-500/30 hover:to-cyan-400/25"

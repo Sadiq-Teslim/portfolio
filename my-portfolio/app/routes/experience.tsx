@@ -4,17 +4,23 @@ import { useRevealAnimation } from "../hooks/useRevealAnimation";
 
 type ExperienceItem = (typeof experienceData)[number];
 
-const ExperienceCard: React.FC<{ experience: ExperienceItem; delay: number }> = ({ experience, delay }) => {
+const ExperienceCard: React.FC<{ experience: ExperienceItem; delay: number; order: number }> = ({ experience, delay, order }) => {
   const { ref, style, isVisible } = useRevealAnimation<HTMLDivElement>({ delay });
 
   return (
     <article
       ref={ref}
       style={style}
-      className={`bg-slate-800/50 border border-slate-700/60 rounded-2xl p-8 md:p-10 shadow-xl shadow-slate-900/30 transition-all duration-700 hover:border-violet-500/60 ${
+      className={`relative bg-slate-800/50 border border-slate-700/60 rounded-2xl p-8 md:p-10 shadow-xl shadow-slate-900/30 transition-all duration-700 hover:border-violet-500/60 ${
         isVisible ? "motion-safe:animate-reveal-up" : "opacity-0 translate-y-8"
       } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
     >
+      {/* Timeline indicator */}
+      <span className="hidden md:block absolute -left-14 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full border-2 border-violet-400 bg-slate-900" />
+      <span className="hidden md:block absolute -left-20 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-500">
+        {String(order + 1).padStart(2, "0")}
+      </span>
+
       <header className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
         <div>
           <h3 className="text-2xl font-bold text-slate-100">{experience.role}</h3>
@@ -70,6 +76,11 @@ const ExperienceCard: React.FC<{ experience: ExperienceItem; delay: number }> = 
 
 const ExperienceSection = () => {
   const headerReveal = useRevealAnimation<HTMLDivElement>({ delay: 60 });
+  const experienceHighlights = [
+    { label: "8× Hackathon Wins", detail: "ACM, AfriHackBox, 3MTT SW" },
+    { label: "20K+ Civic Ballots", detail: "ULES voting with Paystack audits" },
+    { label: "2K+ Learners", detail: "GPAi nudges + ECX LMS" },
+  ];
 
   return (
     <section id="experience" className="bg-slate-900">
@@ -91,11 +102,25 @@ const ExperienceSection = () => {
             A snapshot of recent product work—pairing dependable engineering with clear business outcomes across security, commerce, and marketplace stacks.
           </p>
         </div>
-
-        <div className="space-y-10">
-          {experienceData.map((experience, index) => (
-            <ExperienceCard key={experience.id} experience={experience} delay={index * 160} />
+        <div className="grid gap-4 sm:grid-cols-3 mb-16">
+          {experienceHighlights.map((highlight) => (
+            <div
+              key={highlight.label}
+              className="rounded-2xl border border-slate-700/60 bg-slate-900/60 px-6 py-5 text-center shadow-inner shadow-black/40"
+            >
+              <p className="text-xs uppercase tracking-[0.35em] text-violet-300/80">{highlight.label}</p>
+              <p className="mt-2 text-sm text-slate-300">{highlight.detail}</p>
+            </div>
           ))}
+        </div>
+
+        <div className="relative md:pl-12">
+          <div className="hidden md:block absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500/40 via-slate-700/40 to-transparent" />
+          <div className="space-y-10">
+            {experienceData.map((experience, index) => (
+              <ExperienceCard key={experience.id} experience={experience} delay={index * 160} order={index} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

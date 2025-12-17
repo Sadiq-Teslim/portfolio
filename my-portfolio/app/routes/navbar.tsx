@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import resumeFile from '../assets/Teslim Adetola Sadiq.docx.pdf';
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -81,7 +82,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-4">
           <div className="hidden md:block">
             <a
-              href="https://bit.ly/STAResume"
+              href={resumeFile}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-full border border-violet-400/60 px-5 py-2.5 text-sm font-semibold text-violet-200 transition-all duration-300 hover:border-violet-300 hover:bg-violet-500/10 hover:text-violet-100"
@@ -151,7 +152,7 @@ const Navbar = () => {
             </li>
             <li className="pt-2 w-full px-8">
               <a
-                href="https://bit.ly/STAResume"
+                href={resumeFile}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center rounded-full border border-violet-400/60 px-6 py-3 text-sm font-semibold text-violet-200 transition-all duration-300 hover:border-violet-300 hover:bg-violet-500/10 hover:text-violet-100"
