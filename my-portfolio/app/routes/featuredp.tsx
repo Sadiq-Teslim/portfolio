@@ -4,6 +4,7 @@ import { useRevealAnimation } from "../hooks/useRevealAnimation";
 import fairplayImage from "../assets/fairplay-thumbnail.svg";
 import ulesVotingImage from "../assets/ules-voting-thumbnail.png";
 import gpaiImage from "../assets/gpai-thumbnail.png";
+import nevoImage from "../assets/techstars-thumbnail.png";
 
 type FeaturedProject = {
   id: string;
@@ -81,22 +82,29 @@ const FeaturedProjects = () => {
       id: "fairplay-africa",
       title: "FairPlay Africa",
       description:
-        "Hackathon-winning piracy watchtower protecting Nollywood titles with sub-300ms detection sweeps.",
+        "ACM grand-prize piracy watchtower protecting Nollywood titles with sub-300ms detection sweeps.",
       image: fairplayImage,
     },
     {
       id: "ules-voting-platform",
       title: "ULES Awards Voting Platform",
       description:
-        "Secure e-voting stack verifying 3,500+ students and streaming 20K+ ballots live.",
+        "Secure e-voting stack verifying 3,500+ students and streaming 20,000+ ballots live with audit trails.",
       image: ulesVotingImage,
     },
     {
       id: "gpai-assistant",
       title: "GPAi - AI GPA Assistant",
       description:
-        "AI GPA mentor helping 2k+ undergraduates simulate grades and auto-build study plans.",
+        "AI GPA mentor helping 2,000+ undergraduates simulate grades and auto-build study plans.",
       image: gpaiImage,
+    },
+    {
+      id: "nevo-adaptive-learning",
+      title: "Nevo - Adaptive Learning Coach",
+      description:
+        "3MTT South-West champion adapting neurodivergent lesson flows with Gemini-personalised content.",
+      image: nevoImage,
     },
   ];
 

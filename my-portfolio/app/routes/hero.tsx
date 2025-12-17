@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import myImage from '../assets/my-image.jpg'; 
+import resumeFile from '../assets/Teslim Adetola Sadiq.docx.pdf';
 
 const HeroSection = () => {
   const badgesReveal = useRevealAnimation<HTMLDivElement>({ delay: 80 });
@@ -35,7 +36,7 @@ const HeroSection = () => {
                 Open to Work
               </span>
               <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/40 bg-violet-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-violet-200/90">
-                Avzdax Engineer · WebDerk Lead
+                8x Hackathon Winner · GPAi Founder
               </span>
             </div>
             <h1
@@ -55,7 +56,7 @@ const HeroSection = () => {
                 paragraphReveal.isVisible ? 'motion-safe:animate-reveal-up' : 'opacity-0 translate-y-6'
               } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
             >
-              I’m a Lagos-based Fullstack Developer & AI Engineer who blends thoughtful UI work with pragmatic AI and payment stacks. If you need a teammate who can move from whiteboard to shipping builds like FairPlay Africa or the ULES voting platform, I’m ready to jump in.
+              I’m a Lagos-based Fullstack Developer & AI Engineer shipping AI-first civic, security, and education platforms for Nigeria. From FairPlay Africa and Nevo to ULES voting and GPAi, I lead pods that blend expressive interfaces with dependable Node/FastAPI services plus payment and realtime rails that bridge the digital divide.
             </p>
           </div>
           <div
@@ -67,10 +68,13 @@ const HeroSection = () => {
           >
             <div className="flex flex-wrap gap-3 text-sm text-slate-200/90">
               <span className="rounded-full border border-slate-400/40 bg-slate-900/40 px-3 py-1 backdrop-blur-sm">
-                FairPlay Africa · ACM 2025 Winner
+                FairPlay Africa · ACM 2025 Grand Prize
               </span>
               <span className="rounded-full border border-slate-400/40 bg-slate-900/40 px-3 py-1 backdrop-blur-sm">
-                20K+ secure civic ballots cast
+                20,000+ secure civic ballots tallied
+              </span>
+              <span className="rounded-full border border-slate-400/40 bg-slate-900/40 px-3 py-1 backdrop-blur-sm">
+                GPAi mentors 2,000+ students
               </span>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -81,7 +85,7 @@ const HeroSection = () => {
                 Explore Recent Builds
               </Link>
               <a
-                href="https://bit.ly/STAResume"
+                href={resumeFile}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full border border-violet-400/60 bg-slate-900/40 px-8 py-3 text-sm font-semibold text-violet-200 transition-all duration-300 hover:border-violet-300 hover:bg-violet-500/10 hover:text-violet-100 backdrop-blur"

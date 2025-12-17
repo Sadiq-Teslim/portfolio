@@ -23,16 +23,16 @@ export const experienceData: ExperienceItem[] = [
     period: "2025 – Present",
     location: "Lekki, Lagos",
     description:
-      "Contributing to a confidential mobility security initiative at Avzdax Technologies.",
+      "Advancing a peace-tech security initiative by pairing AI research with production-grade dashboards at Avzdax Technologies.",
     achievements: [
-      "Partner with cross-functional squads to deliver secure API and dashboard increments under NDA constraints.",
-      "Ship fullstack updates that align with internal safety reviews and stakeholder rollout plans.",
-      "Collaborate with product and research pods to prioritise improvements while protecting sensitive details.",
+      "Prototype and productionise threat-detection dashboards that fuse React, Node.js, and TensorFlow services for <250ms alerting.",
+      "Extend OpenCV pipelines into hardened APIs so operations teams can triage anomalies without exposing confidential datasets.",
+      "Partner with research pods to plan sprint scopes, instrument telemetry, and shepherd releases through NDA compliance.",
     ],
     stack: ["React", "TypeScript", "Node.js", "MongoDB", "Python", "TensorFlow"],
     metrics: [
-      { label: "Focus", value: "Confidential security R&D" },
-      { label: "Delivery", value: "Fullstack increments" },
+      { label: "Focus", value: "Threat detection & safety R&D" },
+      { label: "Latency", value: "<250ms dashboard sweeps" },
       { label: "Tenure", value: "2025–Present" },
     ],
   },
@@ -43,17 +43,37 @@ export const experienceData: ExperienceItem[] = [
     period: "2024 – Present",
     location: "Remote",
     description:
-      "Keeping the WebDerk marketplace performant while growing its subscription catalogue for creators.",
+      "Keeping the WebDerk marketplace performant while scaling multi-product SaaS for creators.",
     achievements: [
-      "Guard uptime while rolling out UI and checkout improvements that help customers unlock Canva Pro, GPT Pro, and CapCut Pro tiers without friction.",
-      "Automate catalogue and pricing syncs between the marketing site and Node utilities so new digital products ship in under 30 minutes.",
-      "Instrument conversion analytics and A/B experiments to keep refund and support turnaround below 24 hours.",
+      "Orchestrate TypeScript + Node.js services, Docker builds, and CI/CD so launches stay within a <24h support SLA.",
+      "Automate catalogue and pricing syncs across marketing pages and fulfillment utilities, shrinking SKU rollout to under 30 minutes.",
+      "Ship UI and checkout experiments that lifted conversion by 15% while Stripe reconciliation stays audit-ready.",
     ],
     stack: ["Next.js", "TypeScript", "Node.js", "Stripe", "PostgreSQL"],
     metrics: [
-      { label: "Catalogue", value: "Multi-product SaaS bundles" },
+      { label: "Conversion Lift", value: "+15% checkouts" },
       { label: "Support SLA", value: "<24h" },
       { label: "Tenure", value: "2024–Present" },
+    ],
+  },
+  {
+    id: "ecx-unilag-dev-lead",
+    company: "ECX UNILAG",
+    role: "Development Lead",
+    period: "Oct 2025 – Present",
+    location: "Akoka, Lagos",
+    description:
+      "Leading the ECX UNILAG engineering pod to ship community tools, merch funnels, and learning platforms with measurable reach.",
+    achievements: [
+      "Manage a squad of 10+ student developers, steering roadmaps, code reviews, and mentorship cadences.",
+      "Rebuilt the ECX Go link shortener and analytics service, halving redirect latency while adding regional insights.",
+      "Launched the ECX merch store (NGN 500k+ in week-one preorders) and a modular LMS powering 1,000+ community learners.",
+    ],
+    stack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Supabase", "Paystack"],
+    metrics: [
+      { label: "Team", value: "10+ builders" },
+      { label: "Revenue", value: "NGN 500k+ week one" },
+      { label: "Learners", value: "1,000+ onboarded" },
     ],
   },
 ];

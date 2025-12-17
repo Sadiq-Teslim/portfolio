@@ -193,15 +193,17 @@ const ProjectDetailPage = () => {
 
               <h3 className="text-xl font-bold text-white mb-4">Links</h3>
               <div className="flex flex-col gap-4">
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center w-full bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-violet-500/25 transition-all duration-300 transform hover:scale-105 motion-safe:animate-reveal-scale"
-                  style={{ animationDelay: "120ms" }}
-                >
-                  Live Demo
-                </a>
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-center w-full bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-violet-500/25 transition-all duration-300 transform hover:scale-105 motion-safe:animate-reveal-scale"
+                    style={{ animationDelay: "120ms" }}
+                  >
+                    Live Demo
+                  </a>
+                )}
                 <a
                   href={project.repoUrl}
                   target="_blank"
