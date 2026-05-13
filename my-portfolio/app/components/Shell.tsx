@@ -8,6 +8,7 @@ import {
   Home,
   Linkedin,
   Mail,
+  MessageCircle,
   Moon,
   Sun,
   UserRound,
@@ -18,6 +19,7 @@ const navItems = [
   { label: "Home", href: "/", icon: Home },
   { label: "About", href: "/about", icon: UserRound },
   { label: "Work", href: "/work", icon: Briefcase },
+  { label: "Guestbook", href: "/guestbook", icon: MessageCircle },
   { label: "Resume", href: resumeUrl, icon: FileText, external: true },
 ];
 
