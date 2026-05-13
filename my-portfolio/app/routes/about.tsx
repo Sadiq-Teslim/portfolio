@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import type { Route } from "./+types/about";
 import { Shell } from "~/components/Shell";
-import { experience, profile, technicalSkills } from "~/data/profile";
+import { experience, profile, seoImage, siteUrl, technicalSkills } from "~/data/profile";
+
+const title = "About Teslim Sadiq | Software Engineer";
+const description =
+  "Learn about Teslim Sadiq's software engineering experience, technical skills, backend architecture work, API design, data systems, and scalable product engineering.";
 
 const aboutSections = [
   { id: "intro", label: "Introduction" },
@@ -11,13 +15,25 @@ const aboutSections = [
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "About - Teslim Sadiq" },
-    {
-      name: "description",
-      content:
-        "About Teslim Sadiq, a software engineer in Lagos focused on scalable web systems, AI products, and high-traffic APIs.",
-    },
+    { title },
+    { name: "description", content: description },
+    { name: "robots", content: "index, follow" },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:type", content: "profile" },
+    { property: "og:url", content: `${siteUrl}/about` },
+    { property: "og:site_name", content: "Teslim Sadiq" },
+    { property: "og:image", content: seoImage },
+    { property: "og:image:alt", content: "Teslim Sadiq - Software Engineer" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: seoImage },
   ];
+}
+
+export function links() {
+  return [{ rel: "canonical", href: `${siteUrl}/about` }];
 }
 
 export default function About() {

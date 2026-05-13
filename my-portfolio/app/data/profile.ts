@@ -1,4 +1,6 @@
 export const resumeUrl = "/Teslim%20Adetola%20Sadiq%20-%20Resume.pdf";
+export const siteUrl = "https://teslimcodes.tech";
+export const seoImage = `${siteUrl}/og-image.png`;
 
 export const profile = {
   name: "Teslim Sadiq",

@@ -1,29 +1,37 @@
 import type { Route } from "./+types/home";
 import portrait from "~/assets/teslim-portrait.jpg";
 import { Shell } from "~/components/Shell";
-import { profile, projects, resumeUrl } from "~/data/profile";
+import { profile, projects, resumeUrl, seoImage, siteUrl } from "~/data/profile";
+
+const title = "Teslim Sadiq | Software Engineer";
+const description =
+  "Teslim Sadiq is a Software Engineer in Lagos building scalable systems, APIs, data platforms, and product-facing interfaces with TypeScript, Node.js, Python, FastAPI, PostgreSQL, MongoDB, and Redis.";
+
+export function links() {
+  return [{ rel: "canonical", href: siteUrl }];
+}
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Teslim Sadiq - Software Engineer" },
-    {
-      name: "description",
-      content:
-        "Teslim Sadiq is a software engineer in Lagos building scalable web systems across edtech, fintech, civic tech, and AI products.",
-    },
+    { title },
+    { name: "description", content: description },
     { name: "robots", content: "index, follow" },
-    { property: "og:title", content: "Teslim Sadiq - Software Engineer" },
-    {
-      property: "og:description",
-      content:
-        "Software engineer building scalable web systems across edtech, fintech, civic tech, and AI products.",
-    },
-    { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://teslimcodes.tech" },
-    { name: "twitter:card", content: "summary" },
-    { name: "twitter:title", content: "Teslim Sadiq - Software Engineer" },
-    { name: "twitter:site", content: "@teslimcodes" },
+    { name: "keywords", content: "Teslim Sadiq, Software Engineer, Backend Engineer, TypeScript, Node.js, Python, FastAPI, React, Lagos" },
     { name: "author", content: "Teslim Adetola Sadiq" },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: siteUrl },
+    { property: "og:site_name", content: "Teslim Sadiq" },
+    { property: "og:image", content: seoImage },
+    { property: "og:image:alt", content: "Teslim Sadiq - Software Engineer" },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: seoImage },
+    { name: "twitter:site", content: "@teslimcodes" },
   ];
 }
 

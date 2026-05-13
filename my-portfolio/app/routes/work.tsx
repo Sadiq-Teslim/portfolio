@@ -1,16 +1,32 @@
 import type { Route } from "./+types/work";
 import { Shell } from "~/components/Shell";
-import { projects } from "~/data/profile";
+import { projects, seoImage, siteUrl } from "~/data/profile";
+
+const title = "Projects | Teslim Sadiq";
+const description =
+  "Selected software engineering projects by Teslim Sadiq, including Nevo, PIDEC, ECX LMS, ULES, ThreadCraft, FairPlay Africa, and GPAi.";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Work - Teslim Sadiq" },
-    {
-      name: "description",
-      content:
-        "Selected software engineering projects by Teslim Sadiq, including Nevo, PIDEC, ECX LMS, ULES, ThreadCraft, FairPlay, and GPAi.",
-    },
+    { title },
+    { name: "description", content: description },
+    { name: "robots", content: "index, follow" },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: `${siteUrl}/work` },
+    { property: "og:site_name", content: "Teslim Sadiq" },
+    { property: "og:image", content: seoImage },
+    { property: "og:image:alt", content: "Teslim Sadiq selected software engineering projects" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: seoImage },
   ];
+}
+
+export function links() {
+  return [{ rel: "canonical", href: `${siteUrl}/work` }];
 }
 
 export default function Work() {

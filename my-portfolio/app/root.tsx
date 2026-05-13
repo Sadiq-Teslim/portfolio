@@ -8,11 +8,11 @@ import {
   useRouteError,
 } from "react-router-dom";
 
+import { profile, projects, seoImage, siteUrl, socials } from "~/data/profile";
 import "./app.css";
 
 export function links() {
   return [
-    { rel: "canonical", href: "https://teslimcodes.tech" },
     { rel: "icon", type: "image/png", href: "/favicon-96x96.png", sizes: "96x96" },
     { rel: "shortcut icon", href: "/favicon.ico" },
     { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
@@ -30,15 +30,78 @@ export function links() {
   ];
 }
 
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Teslim Adetola Sadiq",
+    alternateName: profile.name,
+    url: siteUrl,
+    image: seoImage,
+    jobTitle: profile.role,
+    email: `mailto:${profile.email}`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Lagos",
+      addressCountry: "NG",
+    },
+    knowsAbout: [
+      "Software Engineering",
+      "Backend Architecture",
+      "API Design",
+      "Distributed Systems",
+      "TypeScript",
+      "Node.js",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+    ],
+    sameAs: socials.filter((social) => social.icon !== "mail").map((social) => social.href),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Teslim Sadiq",
+    url: siteUrl,
+    description:
+      "Portfolio of Teslim Sadiq, a Software Engineer building scalable systems, APIs, data platforms, and product interfaces.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Selected software engineering projects",
+    itemListElement: projects.map((project, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "SoftwareSourceCode",
+        name: project.title,
+        description: project.description,
+        url: project.href ?? `${siteUrl}/work`,
+        programmingLanguage: project.stack,
+      },
+    })),
+  },
+];
+
 export default function Root() {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#070707" />
+        <meta name="application-name" content="Teslim Sadiq" />
+        <meta name="apple-mobile-web-app-title" content="Teslim Sadiq" />
+        <meta name="format-detection" content="telephone=no" />
         <Meta />
         <Links />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body>
         <Outlet />
