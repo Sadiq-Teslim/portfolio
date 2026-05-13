@@ -97,13 +97,6 @@ export const experience = [
       "Architecting the adaptive learning backend with FastAPI, PostgreSQL, Redis, async workers, and AI content personalization.",
   },
   {
-    role: "Lead Software Engineer",
-    company: "FAP Game",
-    period: "2024 - Present",
-    description:
-      "Leading web, game backend, leaderboard, real-time event infrastructure, and deployment architecture.",
-  },
-  {
     role: "Software Engineer",
     company: "Avzdax Technologies",
     period: "2023 - Present",
