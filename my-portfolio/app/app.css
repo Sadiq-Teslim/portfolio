@@ -830,7 +830,20 @@ a {
 
 @media (max-width: 760px) {
   :root,
-  :root[data-theme="light"],
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --page: #ffffff;
+    --text: #0c0c0d;
+    --muted: #6f7177;
+    --faint: #a5a7ad;
+    --line: rgba(12, 12, 13, 0.12);
+    --soft: rgba(12, 12, 13, 0.06);
+    --panel: rgba(255, 255, 255, 0.82);
+    --shadow: 0 16px 38px rgba(12, 12, 13, 0.16);
+    --accent: #111111;
+    --mobile-frame: #e8e8e8;
+  }
+
   :root[data-theme="dark"] {
     color-scheme: dark;
     --page: #070707;
@@ -842,10 +855,11 @@ a {
     --panel: rgba(15, 15, 15, 0.82);
     --shadow: 0 16px 38px rgba(0, 0, 0, 0.5);
     --accent: #ffffff;
+    --mobile-frame: #2c2c2c;
   }
 
   body {
-    background: #2c2c2c;
+    background: var(--mobile-frame);
   }
 
   .site-shell {
