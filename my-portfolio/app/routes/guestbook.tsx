@@ -52,6 +52,8 @@ export function links() {
   return [{ rel: "canonical", href: `${siteUrl}/guestbook` }];
 }
 
+const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | undefined;
+
 function cleanLink(value: string) {
   const trimmed = value.trim();
 
@@ -81,6 +83,7 @@ export default function Guestbook() {
   const [link, setLink] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const mailSubject = encodeURIComponent("Guestbook note from your portfolio");
   const mailBody = useMemo(
@@ -110,7 +113,7 @@ export default function Guestbook() {
     }
   }, []);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const nextName = name.trim();
@@ -120,6 +123,8 @@ export default function Guestbook() {
       setStatus("Please add your name and a short note.");
       return;
     }
+
+    setIsSubmitting(true);
 
     const nextEntry: GuestbookEntry = {
       id: window.crypto.randomUUID(),
@@ -131,13 +136,44 @@ export default function Guestbook() {
     };
     const savedEntries = [nextEntry, ...entries.filter((entry) => entry.id !== "welcome")].slice(0, 12);
 
-    window.localStorage.setItem(storageKey, JSON.stringify(savedEntries));
-    setEntries([nextEntry, ...entries]);
-    setName("");
-    setContext("");
-    setLink("");
-    setMessage("");
-    setStatus("Saved here. Send it by email too if you want me to see it.");
+    try {
+      if (formspreeEndpoint) {
+        const response = await fetch(formspreeEndpoint, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: nextEntry.name,
+            context: nextEntry.context,
+            link: nextEntry.link || "",
+            message: nextEntry.message,
+            _subject: `Portfolio guestbook note from ${nextEntry.name}`,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Formspree rejected the submission.");
+        }
+      }
+
+      window.localStorage.setItem(storageKey, JSON.stringify(savedEntries));
+      setEntries([nextEntry, ...entries]);
+      setName("");
+      setContext("");
+      setLink("");
+      setMessage("");
+      setStatus(
+        formspreeEndpoint
+          ? "Sent. Thanks for leaving a note."
+          : "Saved here. Add a Formspree endpoint to send notes to my email.",
+      );
+    } catch {
+      setStatus("I could not send that. Please try the email link instead.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -194,9 +230,11 @@ export default function Guestbook() {
             </label>
 
             <div className="guestbook-actions">
-              <button type="submit">Sign guestbook</button>
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Sign guestbook"}
+              </button>
               <a href={`mailto:${profile.email}?subject=${mailSubject}&body=${mailBody}`}>
-                Send to email
+                Email instead
               </a>
             </div>
 

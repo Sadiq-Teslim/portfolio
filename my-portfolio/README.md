@@ -34,6 +34,16 @@ npm run dev
 
 Your application will be available at `http://localhost:5173`.
 
+### Guestbook Email
+
+Create a form in Formspree, copy its endpoint, then set:
+
+```bash
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
+```
+
+The guestbook form will POST to that endpoint and Formspree will send the note to the email address configured in your Formspree dashboard.
+
 ## Building for Production
 
 Create a production build:

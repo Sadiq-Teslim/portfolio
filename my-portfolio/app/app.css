@@ -651,6 +651,11 @@ a {
   cursor: pointer;
 }
 
+.guestbook-actions button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
 .guestbook-actions a {
   border: 1px solid var(--line);
   color: var(--text);
