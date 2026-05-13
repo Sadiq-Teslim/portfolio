@@ -1,17 +1,15 @@
-import React from 'react';
 import {
+  isRouteErrorResponse,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-  useRouteError, // This hook is used to get error details
-  isRouteErrorResponse,
-} from 'react-router-dom'; // CORRECT: Import from react-router-dom
+  useRouteError,
+} from "react-router-dom";
 
-import './app.css'; // Your global stylesheet
+import "./app.css";
 
-// You can keep your links function for fonts
 export function links() {
   return [
     { rel: "canonical", href: "https://teslimcodes.tech" },
@@ -23,28 +21,25 @@ export function links() {
     },
     {
       rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap",
+      href: "https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap",
     },
   ];
 }
 
-// This is the main layout for your entire application
 export default function Root() {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
         <Meta />
         <Links />
       </head>
       <body>
-        <Outlet /> {/* This is where your routes (like home.tsx) will be rendered */}
-        
+        <Outlet />
         <ScrollRestoration />
-
-        {/* This is the correct way to add Google Analytics */}
-        {process.env.NODE_ENV === 'production' && (
+        {process.env.NODE_ENV === "production" && (
           <>
             <script
               async
@@ -62,35 +57,41 @@ export default function Root() {
             />
           </>
         )}
-        
         <Scripts />
       </body>
     </html>
   );
 }
 
-// This is the correct ErrorBoundary for your project setup
 export function ErrorBoundary() {
   const error = useRouteError();
-  console.error(error); // Log the error to the console for debugging
+  console.error(error);
 
   return (
     <html lang="en">
       <head>
-        <title>Oops!</title>
+        <title>Error | Teslim Sadiq</title>
         <Meta />
         <Links />
       </head>
       <body>
-        <div>
-          <h1>An Error Occurred!</h1>
+        <div className="px-4 text-center">
+          <h1 className="mb-2 text-2xl font-medium">Something went wrong</h1>
           {isRouteErrorResponse(error) ? (
-            <p>
-              {error.status} {error.statusText}
+            <p className="muted">
+              {error.status} - {error.statusText}
             </p>
           ) : (
-            <p>{error instanceof Error ? error.message : 'Unknown Error'}</p>
+            <p className="muted">
+              {error instanceof Error ? error.message : "An unexpected error occurred"}
+            </p>
           )}
+          <a
+            href="/"
+            className="mt-6 inline-flex text-muted underline decoration-white/20 underline-offset-[5px] transition-colors hover:text-accent hover:decoration-accent/60"
+          >
+            Go back home
+          </a>
         </div>
         <Scripts />
       </body>
