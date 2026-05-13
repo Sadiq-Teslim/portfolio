@@ -8,9 +8,9 @@ export const profile = {
   timezone: "Africa/Lagos",
   email: "sadiqadetola08@gmail.com",
   summary:
-    "I build scalable web systems across edtech, fintech, civic tech, and AI products. I work mostly with TypeScript, Node.js, React, Python, FastAPI, PostgreSQL, MongoDB, and Redis.",
+    "I am a Software Engineer currently building Nevo as a Founding Backend Engineer, working across backend architecture, APIs, data systems, and product-facing web experiences.",
   current:
-    "Currently building Nevo, improving my systems design and DSA fundamentals, and looking for software engineering roles where product speed and engineering depth both matter.",
+    "I excel at turning ambiguous product requirements into reliable systems: designing APIs, modeling data, building React and TypeScript interfaces, and shipping Python/FastAPI services backed by PostgreSQL, MongoDB, Redis, and queues.",
 };
 
 export const socials = [
@@ -23,9 +23,18 @@ export const socials = [
 export const projects = [
   {
     year: "2026",
+    title: "Nevo",
+    source: "nevolearning.com",
+    href: "https://nevolearning.com",
+    description:
+      "Adaptive learning platform with personalized content flows, AI-assisted lesson delivery, and student progress systems.",
+    stack: ["FastAPI", "PostgreSQL", "Redis", "BullMQ", "SLM", "React"],
+  },
+  {
+    year: "2026",
     title: "PIDEC 1.0",
-    source: "pidec.pxxl.click",
-    href: "https://pidec.pxxl.click",
+    source: "pidec.com.ng",
+    href: "https://pidec.com.ng",
     description:
       "Faculty-wide engineering challenge platform with team registration, staged submissions, judging, and AI document checks.",
     stack: ["TypeScript", "Express", "Supabase", "BullMQ", "Redis", "Groq Vision", "Gemini"],
@@ -41,17 +50,9 @@ export const projects = [
   },
   {
     year: "2025",
-    title: "Nevo",
-    source: "github.com",
-    href: "https://github.com/Sadiq-Teslim/nevo-app",
-    description:
-      "Adaptive learning platform with personalized content flows, AI-assisted lesson delivery, and student progress systems.",
-    stack: ["FastAPI", "PostgreSQL", "Redis", "BullMQ", "SLM", "React"],
-  },
-  {
-    year: "2025",
     title: "ECX LMS",
-    source: "internal platform",
+    source: "learn.ecx.com.ng",
+    href: "https://learn.ecx.com.ng",
     description:
       "Learning management system for ECX UNILAG, covering course delivery, student dashboards, progress tracking, and admin workflows.",
     stack: ["Next.js", "TypeScript", "Node.js", "MongoDB", "React"],
@@ -108,11 +109,73 @@ export const experience = [
       "Building FastAPI microservices, production dashboards, and ML-backed data workflows for real-time security platforms.",
   },
   {
-    role: "Technical Lead",
+    role: "Development Lead",
     company: "ECX UNILAG",
     period: "2023 - Present",
     description:
       "Leading student developers and shipping community tools including LMS, forms, commerce, and internal systems.",
+  },
+];
+
+export const technicalSkills = [
+  {
+    category: "Languages & Frameworks",
+    items: [
+      "Node.js",
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "Java",
+      "Express.js",
+      "FastAPI",
+      "Django",
+      "Spring Boot",
+      "React",
+      "Next.js",
+    ],
+  },
+  {
+    category: "Databases & Caching",
+    items: [
+      "MongoDB",
+      "PostgreSQL",
+      "Redis",
+      "query optimization",
+      "indexing strategies",
+      "transactions",
+      "rate limiting",
+    ],
+  },
+  {
+    category: "APIs & Integrations",
+    items: ["REST", "GraphQL", "WebSockets", "JWT/OAuth2", "Paystack", "Stripe", "third-party API integrations"],
+  },
+  {
+    category: "Frontend & Product Interfaces",
+    items: [
+      "React Query",
+      "Zustand",
+      "Redux",
+      "Tailwind CSS",
+      "Shadcn/ui",
+      "Radix UI",
+      "Figma",
+      "responsive dashboards",
+    ],
+  },
+  {
+    category: "Infrastructure & DevOps",
+    items: ["AWS S3", "AWS EC2", "Docker", "CI/CD", "GitHub Actions", "BullMQ", "Render", "Vercel"],
+  },
+  {
+    category: "AI/ML Systems",
+    items: [
+      "SLM integration",
+      "inference pipelines",
+      "Gemini API",
+      "content personalization",
+      "ML-backed workflows",
+    ],
   },
 ];
 

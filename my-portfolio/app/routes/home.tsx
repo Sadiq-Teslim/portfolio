@@ -38,9 +38,8 @@ export default function Home() {
           <p>{profile.summary}</p>
           <p>{profile.current}</p>
           <p>
-            I have shipped production systems for live elections, AI learning workflows, developer automation, and consumer products. See selected{" "}
-            <a href="/work">work</a>, read the short <a href="/about">about</a>, or open my{" "}
-            <a href={resumeUrl}>resume</a>.
+            I am interested in teams that value product speed, clear engineering judgment, and scalable systems. Alongside shipping, I am sharpening my DSA and systems design fundamentals. See selected <a href="/work">work</a>, read the short{" "}
+            <a href="/about">about</a>, or open my <a href={resumeUrl}>resume</a>.
           </p>
         </div>
 

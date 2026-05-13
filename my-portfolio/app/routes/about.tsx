@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Route } from "./+types/about";
 import { Shell } from "~/components/Shell";
-import { experience, notes, profile } from "~/data/profile";
+import { experience, profile, technicalSkills } from "~/data/profile";
 
 const aboutSections = [
   { id: "intro", label: "Introduction" },
@@ -90,13 +90,13 @@ export default function About() {
           <section id="intro">
             <h1>About Me</h1>
             <p>
-              My name is {profile.name}. I am a software engineer from Lagos, Nigeria, focused on building reliable web systems that can survive real users, real deadlines, and real business constraints.
+              My name is {profile.name}. I am a Software Engineer from Lagos, Nigeria, focused on building scalable systems that are reliable, maintainable, and useful under real business constraints.
             </p>
             <p>
-              My work sits mostly around TypeScript, Node.js, React, Python, FastAPI, PostgreSQL, MongoDB, and Redis. I like products where the frontend experience, API architecture, data model, and deployment story all have to line up cleanly.
+              I work across backend architecture, API design, data modeling, distributed workflows, and product-facing interfaces. My core stack includes TypeScript, Node.js, React, Python, FastAPI, PostgreSQL, MongoDB, Redis, and queue-based systems.
             </p>
             <p>
-              Over the last few years, I have worked across edtech, civic tech, fintech, AI tooling, and consumer products. The through-line is simple: I build systems that move quickly without becoming fragile.
+              I have shipped systems across edtech, civic tech, fintech, AI tooling, and consumer products. I care about clear engineering decisions, dependable execution, and building software that can scale without becoming difficult to change.
             </p>
           </section>
 
@@ -106,7 +106,6 @@ export default function About() {
               <article className="experience-entry" key={`${item.company}-${item.role}`}>
                 <div>
                   <h3>{item.role}</h3>
-                  <span>{item.period}</span>
                 </div>
                 <p className="company">{item.company}</p>
                 <p>{item.description}</p>
@@ -116,11 +115,14 @@ export default function About() {
 
           <section id="skills">
             <h2>Technical Skills</h2>
-            <ul className="notes-list">
-              {notes.map((note) => (
-                <li key={note}>{note}</li>
+            <div className="skills-list">
+              {technicalSkills.map((skill) => (
+                <article className="skill-group" key={skill.category}>
+                  <h3>{skill.category}</h3>
+                  <p>{skill.items.join(", ")}</p>
+                </article>
               ))}
-            </ul>
+            </div>
           </section>
         </div>
       </section>
