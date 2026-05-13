@@ -13,6 +13,12 @@ type GuestbookEntry = {
   dateLabel: string;
 };
 
+type SubmissionDialog = {
+  title: string;
+  message: string;
+  tone: "success" | "error" | "info";
+} | null;
+
 const title = "Guestbook | Teslim Sadiq";
 const description =
   "Leave a short note for Teslim Sadiq, Software Engineer in Lagos, Nigeria.";
@@ -84,6 +90,7 @@ export default function Guestbook() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [dialog, setDialog] = useState<SubmissionDialog>(null);
 
   const mailSubject = encodeURIComponent("Guestbook note from your portfolio");
   const mailBody = useMemo(
@@ -113,6 +120,21 @@ export default function Guestbook() {
     }
   }, []);
 
+  useEffect(() => {
+    if (!dialog) {
+      return;
+    }
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setDialog(null);
+      }
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [dialog]);
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -121,6 +143,11 @@ export default function Guestbook() {
 
     if (!nextName || !nextMessage) {
       setStatus("Please add your name and a short note.");
+      setDialog({
+        title: "Almost there",
+        message: "Please add your name and a short note before signing the guestbook.",
+        tone: "info",
+      });
       return;
     }
 
@@ -164,13 +191,23 @@ export default function Guestbook() {
       setContext("");
       setLink("");
       setMessage("");
-      setStatus(
-        formspreeEndpoint
-          ? "Sent. Thanks for leaving a note."
-          : "Saved here. Add a Formspree endpoint to send notes to my email.",
-      );
+      const successMessage = formspreeEndpoint
+        ? "Your note has been sent to my email. Thanks for leaving it."
+        : "Your note was saved in this browser. Add a Formspree endpoint to send notes to my email.";
+      setStatus(successMessage);
+      setDialog({
+        title: formspreeEndpoint ? "Message sent" : "Saved locally",
+        message: successMessage,
+        tone: formspreeEndpoint ? "success" : "info",
+      });
     } catch {
-      setStatus("I could not send that. Please try the email link instead.");
+      const failureMessage = "I could not send that through the form. Please try the email link instead.";
+      setStatus(failureMessage);
+      setDialog({
+        title: "Message not sent",
+        message: failureMessage,
+        tone: "error",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -263,6 +300,30 @@ export default function Guestbook() {
           </div>
         </div>
       </section>
+
+      {dialog ? (
+        <div
+          className="guestbook-dialog-backdrop"
+          role="presentation"
+          onClick={() => setDialog(null)}
+        >
+          <div
+            className={`guestbook-dialog ${dialog.tone}`}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="guestbook-dialog-title"
+            aria-describedby="guestbook-dialog-message"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <span className="guestbook-dialog-mark" aria-hidden="true" />
+            <h2 id="guestbook-dialog-title">{dialog.title}</h2>
+            <p id="guestbook-dialog-message">{dialog.message}</p>
+            <button type="button" onClick={() => setDialog(null)}>
+              Close
+            </button>
+          </div>
+        </div>
+      ) : null}
     </Shell>
   );
 }
