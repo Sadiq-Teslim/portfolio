@@ -46,11 +46,11 @@ function XIcon({ size = 18, className = "" }: { size?: number; className?: strin
 }
 
 function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     const saved = window.localStorage.getItem("theme");
-    const next = saved === "dark" ? "dark" : "light";
+    const next = saved === "light" ? "light" : "dark";
     setTheme(next);
     document.documentElement.dataset.theme = next;
   }, []);

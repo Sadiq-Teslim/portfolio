@@ -1,21 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light;
-  --page: #ffffff;
-  --text: #0c0c0d;
-  --muted: #6f7177;
-  --faint: #a5a7ad;
-  --line: rgba(12, 12, 13, 0.12);
-  --soft: rgba(12, 12, 13, 0.06);
-  --panel: rgba(255, 255, 255, 0.76);
-  --shadow: 0 16px 40px rgba(12, 12, 13, 0.16);
-  --accent: #111111;
-  --pointer-x: 50vw;
-  --pointer-y: 20vh;
-}
-
-:root[data-theme="dark"] {
   color-scheme: dark;
   --page: #0a0a0a;
   --text: #f5f5f5;
@@ -26,6 +11,21 @@
   --panel: rgba(22, 22, 22, 0.78);
   --shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
   --accent: #ffffff;
+  --pointer-x: 50vw;
+  --pointer-y: 20vh;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page: #ffffff;
+  --text: #0c0c0d;
+  --muted: #6f7177;
+  --faint: #a5a7ad;
+  --line: rgba(12, 12, 13, 0.12);
+  --soft: rgba(12, 12, 13, 0.06);
+  --panel: rgba(255, 255, 255, 0.76);
+  --shadow: 0 16px 40px rgba(12, 12, 13, 0.16);
+  --accent: #111111;
 }
 
 html {
@@ -911,7 +911,6 @@ a {
 }
 
 @media (max-width: 760px) {
-  :root,
   :root[data-theme="light"] {
     color-scheme: light;
     --page: #ffffff;
@@ -926,6 +925,7 @@ a {
     --mobile-frame: #e8e8e8;
   }
 
+  :root,
   :root[data-theme="dark"] {
     color-scheme: dark;
     --page: #070707;
