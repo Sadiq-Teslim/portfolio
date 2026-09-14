@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import portrait from "~/assets/teslim-portrait.jpg";
 import { Shell } from "~/components/Shell";
-import { profile, projects, resumeUrl, seoImage, siteUrl } from "~/data/profile";
+import { experience, profile, projects, resumeUrl, seoImage, siteUrl } from "~/data/profile";
 
 const title = "Teslim Sadiq | Software Engineer";
 const description =
@@ -52,6 +52,28 @@ export default function Home() {
         </div>
 
         <img className="portrait" src={portrait} alt="Teslim Sadiq" />
+      </section>
+
+      <section className="section-block">
+        <div className="section-heading">
+          <span>Roles</span>
+        </div>
+        <div className="roles-list compact-roles-list">
+          {experience.map((role) => (
+            <article className="role-item" key={`${role.company}-${role.role}`}>
+              <div className="role-title-row">
+                <h2>{role.role}</h2>
+                <span>{role.period}</span>
+              </div>
+              <p className="role-company">
+                <a href={role.href} target="_blank" rel="noreferrer">
+                  {role.company}
+                </a>
+              </p>
+              <p>{role.description}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section-block">

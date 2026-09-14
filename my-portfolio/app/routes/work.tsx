@@ -1,10 +1,10 @@
 import type { Route } from "./+types/work";
 import { Shell } from "~/components/Shell";
-import { projects, seoImage, siteUrl } from "~/data/profile";
+import { experience, projects, seoImage, siteUrl } from "~/data/profile";
 
-const title = "Projects | Teslim Sadiq";
+const title = "Experience | Teslim Sadiq";
 const description =
-  "Selected software engineering projects by Teslim Sadiq, including Nevo, PIDEC, ECX LMS, ULES, ThreadCraft, FairPlay Africa, and GPAi.";
+  "Experience and selected software engineering projects by Teslim Sadiq, including Access Bank, Nevo, Avzdax, Engineering Career Expo, GDGoC, and shipped product work.";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -17,7 +17,7 @@ export function meta({}: Route.MetaArgs) {
     { property: "og:url", content: `${siteUrl}/work` },
     { property: "og:site_name", content: "Teslim Sadiq" },
     { property: "og:image", content: seoImage },
-    { property: "og:image:alt", content: "Teslim Sadiq selected software engineering projects" },
+    { property: "og:image:alt", content: "Teslim Sadiq software engineering experience and projects" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
@@ -48,7 +48,33 @@ export default function Work() {
   return (
     <Shell>
       <section className="work-page">
-        <h1>Projects - Teslim Sadiq</h1>
+        <h1>Experience - Teslim Sadiq</h1>
+
+        <section className="work-roles-section" aria-labelledby="roles-heading">
+          <div className="section-heading">
+            <span id="roles-heading">Roles</span>
+          </div>
+          <div className="roles-list">
+            {experience.map((role) => (
+              <article className="role-item" key={`${role.company}-${role.role}`}>
+                <div className="role-title-row">
+                  <h2>{role.role}</h2>
+                  <span>{role.period}</span>
+                </div>
+                <p className="role-company">
+                  <a href={role.href} target="_blank" rel="noreferrer">
+                    {role.company}
+                  </a>
+                </p>
+                <p>{role.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <div className="section-heading projects-heading">
+          <span>Projects</span>
+        </div>
 
         <div className="work-list">
           {projectsByYear.map(({ year, projects: yearProjects }) => (

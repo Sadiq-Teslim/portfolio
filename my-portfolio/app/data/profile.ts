@@ -10,9 +10,9 @@ export const profile = {
   timezone: "Africa/Lagos",
   email: "sadiqadetola08@gmail.com",
   summary:
-    "I am a Software Engineer currently building Nevo as a Founding Backend Engineer, working across backend architecture, APIs, data systems, and product-facing web experiences.",
+    "I am a Software Engineer and Software Engineering Intern at Access Bank Plc, working across backend systems, product-facing interfaces, and AI-powered student tools.",
   current:
-    "I excel at turning ambiguous product requirements into reliable systems: designing APIs, modeling data, building React and TypeScript interfaces, and shipping Python/FastAPI services backed by PostgreSQL, MongoDB, Redis, and queues.",
+    "I excel at turning ambiguous product requirements into reliable systems: designing APIs, modeling data, building React and TypeScript interfaces, and shipping full-stack products that can serve real communities.",
 };
 
 export const socials = [
@@ -90,25 +90,44 @@ export const projects = [
 
 export const experience = [
   {
-    role: "Founding Backend Engineer",
+    role: "Software Engineering Intern",
+    company: "Access Bank Plc",
+    href: "https://www.linkedin.com/company/access-bank-plc/",
+    period: "2026 - Present",
+    description:
+      "Gaining hands-on experience on real-world banking systems while learning from Access Bank's engineering team.",
+  },
+  {
+    role: "Backend Engineer",
     company: "Nevo",
-    period: "2025 - Present",
+    href: "https://nevolearning.com",
+    period: "2026 - Present",
     description:
-      "Architecting the adaptive learning backend with FastAPI, PostgreSQL, Redis, async workers, and AI content personalization.",
+      "Building backend systems for an adaptive learning platform for neurodivergent students, supporting product launch and AI-assisted learning workflows.",
   },
   {
-    role: "Software Engineer",
+    role: "Backend Engineering Intern",
     company: "Avzdax Technologies",
-    period: "2023 - Present",
+    href: "https://www.linkedin.com/company/avzdaxtech/",
+    period: "2025 - 2026",
     description:
-      "Building FastAPI microservices, production dashboards, and ML-backed data workflows for real-time security platforms.",
+      "Advancing a peace-tech security initiative by pairing AI research with production-grade dashboards, threat-detection services, and hardened API workflows.",
   },
   {
-    role: "Development Lead",
-    company: "ECX UNILAG",
-    period: "2023 - Present",
+    role: "Development Team Lead",
+    company: "Engineering Career Expo",
+    href: "https://www.linkedin.com/company/engineering-career-expo/",
+    period: "2025 - 2026",
     description:
-      "Leading student developers and shipping community tools including LMS, forms, commerce, and internal systems.",
+      "Led the ECX 6.0 development team, shipping the official website, LMS, forms platform, link management tool, and internal community infrastructure.",
+  },
+  {
+    role: "Deputy Development Lead",
+    company: "GDGoC UNILAG",
+    href: "https://www.linkedin.com/company/dscunilag/",
+    period: "2026 - Present",
+    description:
+      "Supporting developer community programs and technical experiences that help students get closer to the people and teams building technology in practice.",
   },
 ];
 

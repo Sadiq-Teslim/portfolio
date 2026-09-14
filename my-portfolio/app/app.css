@@ -349,6 +349,74 @@ a {
   margin-top: 1.75rem;
 }
 
+.roles-list {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.role-item {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.role-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.role-title-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: baseline;
+}
+
+.role-title-row h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.role-title-row span,
+.role-company {
+  color: var(--faint);
+  font-size: 0.86rem;
+}
+
+.role-company {
+  margin: 0.25rem 0 0;
+}
+
+.role-company a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.role-company a:hover {
+  color: var(--text);
+  text-decoration-color: var(--line);
+}
+
+.role-item p:last-child {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.work-roles-section {
+  margin-bottom: 4.25rem;
+}
+
+.projects-heading {
+  margin-bottom: 2.25rem;
+}
+
 .compact-work-item {
   display: block;
   text-decoration: none;
@@ -1038,6 +1106,15 @@ a {
   .section-block {
     width: 100%;
     margin-top: 2.75rem;
+  }
+
+  .role-title-row {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .role-title-row span {
+    font-size: 0.8rem;
   }
 
   .work-year-group {
