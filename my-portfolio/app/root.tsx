@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   useRouteError,
-} from "react-router-dom";
+} from "react-router";
 
 import { profile, projects, seoImage, siteUrl, socials } from "~/data/profile";
 import "./app.css";

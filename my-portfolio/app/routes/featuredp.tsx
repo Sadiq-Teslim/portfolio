@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { useRevealAnimation } from "../hooks/useRevealAnimation";
 import fairplayImage from "../assets/fairplay-thumbnail.svg";
 import ulesVotingImage from "../assets/ules-voting-thumbnail.png";

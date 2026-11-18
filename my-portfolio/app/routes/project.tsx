@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import { projectsData } from '../data/projectsData';
 import Navbar from './navbar';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import myImage from '../assets/my-image.jpg'; 
 import resumeFile from '../assets/Teslim Adetola Sadiq.docx.pdf';
