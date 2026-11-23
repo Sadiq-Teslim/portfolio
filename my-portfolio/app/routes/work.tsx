@@ -1,5 +1,6 @@
 import type { Route } from "./+types/work";
 import { Shell } from "~/components/Shell";
+import { RoleList } from "~/components/RoleList";
 import { experience, projects, seoImage, siteUrl } from "~/data/profile";
 
 const title = "Experience | Teslim Sadiq";
@@ -54,22 +55,7 @@ export default function Work() {
           <div className="section-heading">
             <span id="roles-heading">Roles</span>
           </div>
-          <div className="roles-list">
-            {experience.map((role) => (
-              <article className="role-item" key={`${role.company}-${role.role}`}>
-                <div className="role-title-row">
-                  <h2>{role.role}</h2>
-                  <span>{role.period}</span>
-                </div>
-                <p className="role-company">
-                  <a href={role.href} target="_blank" rel="noreferrer">
-                    {role.company}
-                  </a>
-                </p>
-                <p>{role.description}</p>
-              </article>
-            ))}
-          </div>
+          <RoleList roles={experience} />
         </section>
 
         <div className="section-heading projects-heading">

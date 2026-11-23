@@ -88,7 +88,16 @@ export const projects = [
   },
 ];
 
-export const experience = [
+export type ExperienceRole = {
+  role: string;
+  company: string;
+  href: string;
+  period: string;
+  description: string;
+  employmentType?: string;
+};
+
+export const experience: ExperienceRole[] = [
   {
     role: "Backend Engineer",
     company: "Nevo",
@@ -123,17 +132,17 @@ export const experience = [
   },
   {
     role: "Co-Lead Organizer",
-    company: "GDGoC UNILAG",
+    company: "GDG On Campus UNILAG",
     href: "https://www.linkedin.com/company/dscunilag/",
     period: "Oct 2026 - Present",
-    description:
-      "Co-Lead Organizer at GDGoC UNILAG.",
+    description: "",
   },
   {
-    role: "Deputy Development Lead",
-    company: "GDGoC UNILAG",
+    role: "Deputy Lead, Development Team",
+    company: "GDG On Campus UNILAG",
     href: "https://www.linkedin.com/company/dscunilag/",
-    period: "Dec 2025 - Oct 2026",
+    period: "Jan 2026 - Oct 2026",
+    employmentType: "Full-time",
     description:
       "Supported developer community programs and technical experiences that helped students connect with teams building technology.",
   },

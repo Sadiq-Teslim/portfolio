@@ -409,6 +409,80 @@ a {
   line-height: 1.55;
 }
 
+.role-company-group {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.role-group-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.role-group-header a {
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.role-group-header > span {
+  color: var(--faint);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.role-timeline {
+  margin-left: 0.4rem;
+  padding-left: 1.4rem;
+  border-left: 2px solid var(--line);
+}
+
+.role-timeline-entry {
+  position: relative;
+  padding: 0 0 1.5rem;
+}
+
+.role-timeline-entry:last-child {
+  padding-bottom: 0;
+}
+
+.role-timeline-marker {
+  position: absolute;
+  top: 0.28rem;
+  left: calc(-1.4rem - 0.4rem);
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: var(--page);
+}
+
+.role-timeline-entry h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.08rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.role-employment-type,
+.role-timeline-period {
+  margin: 0.18rem 0 0;
+  color: var(--faint);
+  font-size: 0.9rem;
+}
+
+.role-timeline-description {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
 .work-roles-section {
   margin-bottom: 4.25rem;
 }

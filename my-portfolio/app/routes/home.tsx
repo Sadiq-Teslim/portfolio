@@ -1,6 +1,7 @@
 import type { Route } from "./+types/home";
 import portrait from "~/assets/teslim-portrait.jpg";
 import { Shell } from "~/components/Shell";
+import { RoleList } from "~/components/RoleList";
 import { experience, profile, projects, resumeUrl, seoImage, siteUrl } from "~/data/profile";
 
 const title = "Teslim Sadiq | Software Engineer";
@@ -58,22 +59,7 @@ export default function Home() {
         <div className="section-heading">
           <span>Roles</span>
         </div>
-        <div className="roles-list compact-roles-list">
-          {experience.map((role) => (
-            <article className="role-item" key={`${role.company}-${role.role}`}>
-              <div className="role-title-row">
-                <h2>{role.role}</h2>
-                <span>{role.period}</span>
-              </div>
-              <p className="role-company">
-                <a href={role.href} target="_blank" rel="noreferrer">
-                  {role.company}
-                </a>
-              </p>
-              <p>{role.description}</p>
-            </article>
-          ))}
-        </div>
+        <RoleList roles={experience} className="compact-roles-list" />
       </section>
 
       <section className="section-block">

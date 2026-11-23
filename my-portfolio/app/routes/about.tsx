@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import type { Route } from "./+types/about";
 import { Shell } from "~/components/Shell";
-import { experience, profile, seoImage, siteUrl, technicalSkills } from "~/data/profile";
+import { RoleList } from "~/components/RoleList";
+import { profile, seoImage, siteUrl, technicalSkills, experience } from "~/data/profile";
 
 const title = "About Teslim Sadiq | Software Engineer";
 const description =
@@ -118,15 +119,7 @@ export default function About() {
 
           <section id="experience">
             <h2>Work Experience</h2>
-            {experience.map((item) => (
-              <article className="experience-entry" key={`${item.company}-${item.role}`}>
-                <div>
-                  <h3>{item.role}</h3>
-                </div>
-                <p className="company">{item.company}</p>
-                <p>{item.description}</p>
-              </article>
-            ))}
+            <RoleList roles={experience} />
           </section>
 
           <section id="skills">
