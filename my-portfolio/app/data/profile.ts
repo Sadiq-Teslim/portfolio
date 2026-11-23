@@ -122,10 +122,18 @@ export const experience = [
       "Led the ECX 6.0 development team, shipping the official website, LMS, forms platform, link management tool, and internal community infrastructure.",
   },
   {
+    role: "Co-Lead Organizer",
+    company: "GDGoC UNILAG",
+    href: "https://www.linkedin.com/company/dscunilag/",
+    period: "Oct 2026 - Present",
+    description:
+      "Co-Lead Organizer at GDGoC UNILAG.",
+  },
+  {
     role: "Deputy Development Lead",
     company: "GDGoC UNILAG",
     href: "https://www.linkedin.com/company/dscunilag/",
-    period: "2026",
+    period: "Dec 2025 - Oct 2026",
     description:
       "Supported developer community programs and technical experiences that helped students connect with teams building technology.",
   },
