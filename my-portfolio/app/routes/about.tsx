@@ -106,7 +106,7 @@ export default function About() {
           <section id="intro">
             <h1>About Me</h1>
             <p>
-              My name is {profile.name}. I am a Software Engineer from Lagos, Nigeria, focused on building scalable systems that are reliable, maintainable, and useful under real business constraints.
+              My name is {profile.name}. I am a Software Engineer from Lagos, Nigeria. I currently work as a Backend Engineer at Nevo and previously worked as an SWE Intern at Access Bank. I focus on building scalable systems that are reliable, maintainable, and useful under real business constraints.
             </p>
             <p>
               I work across backend architecture, API design, data modeling, distributed workflows, and product-facing interfaces. My core stack includes TypeScript, Node.js, React, Python, FastAPI, PostgreSQL, MongoDB, Redis, and queue-based systems.

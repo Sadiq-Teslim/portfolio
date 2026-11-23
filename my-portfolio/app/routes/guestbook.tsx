@@ -21,7 +21,7 @@ type SubmissionDialog = {
 
 const title = "Guestbook | Teslim Sadiq";
 const description =
-  "Leave a short note for Teslim Sadiq, Software Engineer in Lagos, Nigeria.";
+  "Leave a short note for Teslim Sadiq, Software Engineer in Lagos, Nigeria, currently a Backend Engineer at Nevo.";
 const storageKey = "teslim-guestbook-entries";
 
 const defaultEntries: GuestbookEntry[] = [

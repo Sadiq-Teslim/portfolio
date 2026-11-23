@@ -6,7 +6,7 @@ import Footer from "./footer";
 import { useRevealAnimation } from "../hooks/useRevealAnimation";
 
 export const meta = ({ params }: { params: { id?: string } }) => {
-  const ogImage = "https://teslimcodes.tech/og-image.svg";
+  const ogImage = "https://teslimcodes.me/og-image.svg";
   const twitterHandle = "@teslimadetola08";
   const project = projectsData.find((item) => item.id === params.id);
 
@@ -23,8 +23,8 @@ export const meta = ({ params }: { params: { id?: string } }) => {
         content: "This project does not exist in Teslim Sadiq’s portfolio.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://teslimcodes.tech/projects" },
-      { property: "og:site_name", content: "Teslim Codes" },
+      { property: "og:url", content: "https://teslimcodes.me/projects" },
+      { property: "og:site_name", content: "Teslim Sadiq" },
       { property: "og:image", content: ogImage },
       { property: "og:image:type", content: "image/svg+xml" },
       { property: "og:image:width", content: "1200" },
@@ -40,7 +40,7 @@ export const meta = ({ params }: { params: { id?: string } }) => {
     ];
   }
 
-  const pageUrl = `https://teslimcodes.tech/projects/${project.id}`;
+  const pageUrl = `https://teslimcodes.me/projects/${project.id}`;
 
   return [
     { title: `${project.title} | Teslim Sadiq` },
@@ -49,7 +49,7 @@ export const meta = ({ params }: { params: { id?: string } }) => {
     { property: "og:description", content: project.description },
     { property: "og:type", content: "article" },
     { property: "og:url", content: pageUrl },
-    { property: "og:site_name", content: "Teslim Codes" },
+    { property: "og:site_name", content: "Teslim Sadiq" },
     { property: "og:image", content: ogImage },
     { property: "og:image:type", content: "image/svg+xml" },
     { property: "og:image:width", content: "1200" },

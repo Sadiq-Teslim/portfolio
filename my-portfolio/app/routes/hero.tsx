@@ -56,7 +56,7 @@ const HeroSection = () => {
                 paragraphReveal.isVisible ? 'motion-safe:animate-reveal-up' : 'opacity-0 translate-y-6'
               } motion-reduce:opacity-100 motion-reduce:translate-y-0`}
             >
-              I’m a Lagos-based Fullstack Developer & AI Engineer shipping AI-first civic, security, and education platforms for Nigeria. From FairPlay Africa and Nevo to ULES voting and GPAi, I lead pods that blend expressive interfaces with dependable Node/FastAPI services plus payment and realtime rails that bridge the digital divide.
+              Backend Engineer at Nevo and ex SWE Intern at Access Bank.
             </p>
           </div>
           <div

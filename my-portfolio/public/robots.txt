@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://teslimcodes.tech/sitemap.xml
+Sitemap: https://teslimcodes.me/sitemap.xml

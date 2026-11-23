@@ -1,5 +1,5 @@
 export const resumeUrl = "/Teslim%20Adetola%20Sadiq%20-%20Resume.pdf";
-export const siteUrl = "https://teslimcodes.tech";
+export const siteUrl = "https://teslimcodes.me";
 export const seoImage = `${siteUrl}/og-image.png`;
 
 export const profile = {
@@ -10,9 +10,9 @@ export const profile = {
   timezone: "Africa/Lagos",
   email: "sadiqadetola08@gmail.com",
   summary:
-    "I am a Software Engineer and Software Engineering Intern at Access Bank Plc, working across backend systems, product-facing interfaces, and AI-powered student tools.",
+    "Backend Engineer at Nevo and ex SWE Intern at Access Bank.",
   current:
-    "I excel at turning ambiguous product requirements into reliable systems: designing APIs, modeling data, building React and TypeScript interfaces, and shipping full-stack products that can serve real communities.",
+    "I build reliable backend systems, APIs, and data workflows that support useful products and real users.",
 };
 
 export const socials = [
@@ -90,20 +90,20 @@ export const projects = [
 
 export const experience = [
   {
-    role: "Software Engineering Intern",
-    company: "Access Bank Plc",
-    href: "https://www.linkedin.com/company/access-bank-plc/",
-    period: "2026 - Present",
-    description:
-      "Gaining hands-on experience on real-world banking systems while learning from Access Bank's engineering team.",
-  },
-  {
     role: "Backend Engineer",
     company: "Nevo",
     href: "https://nevolearning.com",
     period: "2026 - Present",
     description:
       "Building backend systems for an adaptive learning platform for neurodivergent students, supporting product launch and AI-assisted learning workflows.",
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "Access Bank Plc",
+    href: "https://www.linkedin.com/company/access-bank-plc/",
+    period: "Sep 2026 - Nov 2026",
+    description:
+      "Built C# services for the retail banking app's airtime, data, and electricity flows, and delivered a hackathon dashboard used by 2,000+ people.",
   },
   {
     role: "Backend Engineering Intern",
@@ -125,9 +125,9 @@ export const experience = [
     role: "Deputy Development Lead",
     company: "GDGoC UNILAG",
     href: "https://www.linkedin.com/company/dscunilag/",
-    period: "2026 - Present",
+    period: "2026",
     description:
-      "Supporting developer community programs and technical experiences that help students get closer to the people and teams building technology in practice.",
+      "Supported developer community programs and technical experiences that helped students connect with teams building technology.",
   },
 ];
 

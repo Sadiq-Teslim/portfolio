@@ -66,7 +66,7 @@ const structuredData = [
     name: "Teslim Sadiq",
     url: siteUrl,
     description:
-      "Portfolio of Teslim Sadiq, a Software Engineer building scalable systems, APIs, data platforms, and product interfaces.",
+      "Portfolio of Teslim Sadiq, a Software Engineer in Lagos, currently a Backend Engineer at Nevo and formerly an SWE Intern at Access Bank.",
   },
   {
     "@context": "https://schema.org",

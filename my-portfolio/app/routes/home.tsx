@@ -5,7 +5,7 @@ import { experience, profile, projects, resumeUrl, seoImage, siteUrl } from "~/d
 
 const title = "Teslim Sadiq | Software Engineer";
 const description =
-  "Teslim Sadiq is a Software Engineer in Lagos building scalable systems, APIs, data platforms, and product-facing interfaces with TypeScript, Node.js, Python, FastAPI, PostgreSQL, MongoDB, and Redis.";
+  "Teslim Sadiq is a Software Engineer in Lagos, currently a Backend Engineer at Nevo and formerly an SWE Intern at Access Bank.";
 
 export function links() {
   return [{ rel: "canonical", href: siteUrl }];
@@ -16,7 +16,7 @@ export function meta({}: Route.MetaArgs) {
     { title },
     { name: "description", content: description },
     { name: "robots", content: "index, follow" },
-    { name: "keywords", content: "Teslim Sadiq, Software Engineer, Backend Engineer, TypeScript, Node.js, Python, FastAPI, React, Lagos" },
+    { name: "keywords", content: "Teslim Sadiq, Software Engineer, Backend Engineer at Nevo, Access Bank, SWE Intern, TypeScript, Node.js, Python, FastAPI, Lagos" },
     { name: "author", content: "Teslim Adetola Sadiq" },
     { property: "og:title", content: title },
     { property: "og:description", content: description },
@@ -24,7 +24,7 @@ export function meta({}: Route.MetaArgs) {
     { property: "og:url", content: siteUrl },
     { property: "og:site_name", content: "Teslim Sadiq" },
     { property: "og:image", content: seoImage },
-    { property: "og:image:alt", content: "Teslim Sadiq - Software Engineer" },
+    { property: "og:image:alt", content: "Teslim Sadiq, Software Engineer" },
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
     { name: "twitter:card", content: "summary_large_image" },

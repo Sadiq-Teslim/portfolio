@@ -4,7 +4,7 @@ import { experience, projects, seoImage, siteUrl } from "~/data/profile";
 
 const title = "Experience | Teslim Sadiq";
 const description =
-  "Experience and selected software engineering projects by Teslim Sadiq, including Access Bank, Nevo, Avzdax, Engineering Career Expo, GDGoC, and shipped product work.";
+  "Software engineering experience by Teslim Sadiq, including his current Backend Engineer role at Nevo, former SWE internship at Access Bank, and selected projects.";
 
 export function meta({}: Route.MetaArgs) {
   return [
