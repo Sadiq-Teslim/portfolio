@@ -1,12 +1,13 @@
 import React from "react";
 import { useParams, Link } from "react-router";
 import { projectsData } from "../data/projectsData";
+import { seoImage, siteUrl } from "~/data/profile";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import { useRevealAnimation } from "../hooks/useRevealAnimation";
 
 export const meta = ({ params }: { params: { id?: string } }) => {
-  const ogImage = "https://teslimcodes.me/og-image.svg";
+  const ogImage = seoImage;
   const twitterHandle = "@teslimadetola08";
   const project = projectsData.find((item) => item.id === params.id);
 
@@ -23,7 +24,7 @@ export const meta = ({ params }: { params: { id?: string } }) => {
         content: "This project does not exist in Teslim Sadiq’s portfolio.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://teslimcodes.me/projects" },
+      { property: "og:url", content: `${siteUrl}/projects` },
       { property: "og:site_name", content: "Teslim Sadiq" },
       { property: "og:image", content: ogImage },
       { property: "og:image:type", content: "image/svg+xml" },
@@ -40,7 +41,7 @@ export const meta = ({ params }: { params: { id?: string } }) => {
     ];
   }
 
-  const pageUrl = `https://teslimcodes.me/projects/${project.id}`;
+  const pageUrl = `${siteUrl}/projects/${project.id}`;
 
   return [
     { title: `${project.title} | Teslim Sadiq` },

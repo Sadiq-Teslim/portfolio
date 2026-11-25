@@ -20,7 +20,7 @@ export const meta = () => [
   { property: 'og:type', content: 'website' },
   { property: 'og:url', content: 'https://teslimcodes.me/projects' },
   { property: 'og:site_name', content: 'Teslim Sadiq' },
-  { property: 'og:image', content: 'https://teslimcodes.me/og-image.svg' },
+  { property: 'og:image', content: 'https://teslimcodes.me/og-image.png' },
   { property: 'og:image:type', content: 'image/svg+xml' },
   { property: 'og:image:width', content: '1200' },
   { property: 'og:image:height', content: '630' },
@@ -31,7 +31,7 @@ export const meta = () => [
     content: 'Award-winning AI and fullstack builds including FairPlay Africa, ULES Voting, GPAi, Kula, and more.',
   },
   { name: 'twitter:site', content: '@teslimadetola08' },
-  { name: 'twitter:image', content: 'https://teslimcodes.me/og-image.svg' },
+  { name: 'twitter:image', content: 'https://teslimcodes.me/og-image.png' },
 ];
 
 type Project = {
